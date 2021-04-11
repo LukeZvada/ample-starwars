@@ -2,11 +2,10 @@ import Head from 'next/head'
 import styles from '../styles/search-home.module.css'
 import React, { useState, useEffect } from "react"
 
-  //Server Side rendering 
+
 const defaultEndpoint = 'https://swapi.py4e.com/api/people/'
 
 export const CharacterSearch = ({  }) => { 
-  // console.log(character)
   const [characterQuery, setCharacterQuery] = useState('')
   const [characterResults, setCharacterResults] = useState([])
   const [starships, setStarships] = useState([])
@@ -32,8 +31,8 @@ export const CharacterSearch = ({  }) => {
       })
 
       const starships = await Promise.all(
-        searchResponse.results[0].starships.map(sh => {
-          return fetch(`${sh}`)
+        searchResponse.results[0].starships.map(ship => {
+          return fetch(`${ship}`)
           .then(res => res.json())
         })
       )
@@ -46,8 +45,8 @@ export const CharacterSearch = ({  }) => {
       )
       
       const species = await Promise.all(
-        searchResponse.results[0].species.map(specie => {
-          return fetch(`${specie}`)
+        searchResponse.results[0].species.map(species => {
+          return fetch(`${species}`)
           .then(res => res.json())
         })
       )
@@ -100,7 +99,7 @@ export const CharacterSearch = ({  }) => {
             characterResults.map(character => {
               return <section key={character.name} className="character-info">
                       <h1 className='character-name'>{character.name}</h1> 
-                        <div className='about-me'>
+                        <div className='about-me list-section'>
                           <h2>About {character.name}</h2>
                             <ol>
                               <li>Height: {character.height}</li>
@@ -109,14 +108,14 @@ export const CharacterSearch = ({  }) => {
                               <li>Date of Birth: {character.birth_year}</li>
                               {
                                 species.length > 0 ?
-                                species.map(specie => {
-                                  return <li key="length">{specie.classification}</li>
+                                species.map(species => {
+                                  return <li key="length">Species: {species.classification}</li>
                                 })
                                 : `No Species info found.`
                               }
                             </ol>
                         </div>
-                        <div className='film-appearances'> 
+                        <div className='film-appearances list-section'> 
                           <h2>Film Appearances</h2>
                             <ol>
                             {
@@ -128,13 +127,13 @@ export const CharacterSearch = ({  }) => {
                             }
                             </ol>
                         </div>
-                        <div className='starships-flown'> 
+                        <div className='starships-flown list-section'> 
                           <h2>StarShips Flown</h2>
                             <ol>
                               {
                                 starships.length > 0 ?
-                                starships.map(sh => {
-                                  return <li key="length">{sh.name}</li>
+                                starships.map(ship => {
+                                  return <li key="length">{ship.name}</li>
                                 })
                                 : `No starships here.`
                               }
