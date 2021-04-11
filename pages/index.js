@@ -24,8 +24,10 @@ export const CharacterSearch = ({ character }) => {
   const [page, updatePage] = useState({
     current: defaultEndpoint
   })
+  
   const {current} = page 
 
+  
   useEffect(() => {
     if (current === defaultEndpoint ) return; 
 
@@ -38,21 +40,19 @@ export const CharacterSearch = ({ character }) => {
         ...searchResponse.info
       })
 
-      // check searchResults.count to determine that value is greater than 0
-      setCharacterResults(searchResponse)
-      // if count = 0, show 'no results' message
-      // if count > 0, setCharacterResults to the array of results
-      // update return to accommodate multiple results 
-
+      setCharacterResults(searchResponse.results)
+      console.log(searchResponse)
     }
     request();
   }, [current]);
+  
   
   const handleKeyPress = (event) => {
     setCharacterQuery(event.target.value)
     console.log(event.target.value)
   }
 
+  
   const handleOnSubmitSearch = (e) => { 
     e.preventDefault();
 
@@ -62,6 +62,7 @@ export const CharacterSearch = ({ character }) => {
       current: endpoint
     })
     console.log(characterQuery)
+    // console.log(characterResults)
   }
 
   return (
@@ -77,32 +78,39 @@ export const CharacterSearch = ({ character }) => {
           {/* first, check if characterResults.count = 0 and if so, show "no results message" */}
           {/* if characterResults.count > 0
               loop over characterResults.results */}
-          <section className="character-info">
-            <h1 className='character-name'>{character.name}</h1> 
-              <div className='about-me'>
-                <h2>About {character.name}</h2>
-                  <ol>
-                    <li>Height: {character.height}</li>
-                    <li>Weight: {character.mass}</li>
-                    <li>Hair Color: {character.hair_color}</li>
-                    <li>Date of Birth: {character.birth_year}</li>
-                    <li>Species Information: {character.species} </li>
-                  </ol>
-              </div>
-              <div className='film-appearances'> 
-                <h2>Film Appearances</h2>
-                  <ol>
-                    <li>{character.films}</li>
-                  </ol>
-              </div>
-              <div className='starships-flown'> 
-                <h2>StarShips Flown</h2>
-                  <ol>
-                    <li>{character.starships}</li>
-                  </ol>
-              </div>
-          </section>
-      </article>
+
+          {
+            characterResults.length > 0 ?
+            characterResults.map(character => {
+              return <section key={character.name} className="character-info">
+                      <h1 className='character-name'>{character.name}</h1> 
+                        <div className='about-me'>
+                          <h2>About {character.name}</h2>
+                            <ol>
+                              <li>Height: {character.height}</li>
+                              <li>Weight: {character.mass}</li>
+                              <li>Hair Color: {character.hair_color}</li>
+                              <li>Date of Birth: {character.birth_year}</li>
+                              <li>Species Information: {character.species} </li>
+                            </ol>
+                        </div>
+                        <div className='film-appearances'> 
+                          <h2>Film Appearances</h2>
+                            <ol>
+                              <li>{character.films}</li>
+                            </ol>
+                        </div>
+                        <div className='starships-flown'> 
+                          <h2>StarShips Flown</h2>
+                            <ol>
+                              <li>{character.starships}</li>
+                            </ol>
+                        </div>
+                    </section>
+                    
+            }) : `Ive searched every galaxy and did not find anyone named ${characterQuery}` 
+          }
+          </article>
     </>
   )
 }
