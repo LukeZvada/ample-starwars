@@ -20,7 +20,7 @@ export const CharacterSearch = ({  }) => {
   useEffect(() => {
     if (current === defaultEndpoint ) return; 
 
-    const request = async () => { 
+    const fetchData = async () => { 
       const res = await fetch(current)
       const searchResponse = await res.json();
 
@@ -28,19 +28,17 @@ export const CharacterSearch = ({  }) => {
         current,
         ...searchResponse.info
       })
-
-      setCharacterResults(searchResponse.results)
-    }
-    request()
-    .then(async () => {
       const starships = await Promise.all(
-        characterResults[0].starships.map(sh => {
+        searchResponse.results[0].starships.map(sh => {
           return fetch(`${sh}`)
           .then(res => res.json())
         })
       )
+
       setStarships(starships)
-    })
+      setCharacterResults(searchResponse.results)
+    }
+    fetchData()
   }, [current]);
 
 
@@ -99,11 +97,11 @@ export const CharacterSearch = ({  }) => {
                         </div>
                         <div className='starships-flown'> 
                           <h2>StarShips Flown</h2>
-                            <ol key={character.name}>
+                            <ol>
                               {
                                 starships.length > 0 ?
                                 starships.map(sh => {
-                                  return <li>{sh.name}</li>
+                                  return <li key="MGLT">{sh.name}</li>
                                 })
                                 : `No starships here.`
                               }
