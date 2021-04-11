@@ -11,6 +11,7 @@ export const CharacterSearch = ({  }) => {
   const [characterResults, setCharacterResults] = useState([])
   const [starships, setStarships] = useState([])
   const [films, setFilms] = useState([])
+  const [species, setSpecies] = useState([])
   const [page, updatePage] = useState({
     current: defaultEndpoint
   })
@@ -43,9 +44,17 @@ export const CharacterSearch = ({  }) => {
           .then(res => res.json())
         })
       )
+      
+      const species = await Promise.all(
+        searchResponse.results[0].species.map(specie => {
+          return fetch(`${specie}`)
+          .then(res => res.json())
+        })
+      )
 
       console.log(films)
-      
+
+      setSpecies(species)
       setFilms(films)
       setStarships(starships)
       setCharacterResults(searchResponse.results)
@@ -98,7 +107,13 @@ export const CharacterSearch = ({  }) => {
                               <li>Weight: {character.mass}</li>
                               <li>Hair Color: {character.hair_color}</li>
                               <li>Date of Birth: {character.birth_year}</li>
-                              <li>Species Information: {character.species} </li>
+                              {
+                                species.length > 0 ?
+                                species.map(specie => {
+                                  return <li key="length">{specie.classification}</li>
+                                })
+                                : `No Species info found.`
+                              }
                             </ol>
                         </div>
                         <div className='film-appearances'> 
