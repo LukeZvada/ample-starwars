@@ -1,5 +1,8 @@
+import Image from 'next/image'
 import Head from 'next/head'
-import styles from '../styles/search-home.module.css'
+import styles from '../styles/search.module.css'
+// import starWarsLogo from "../images/starWarsLogo.png"
+
 import React, { useState, useEffect } from "react"
 
 
@@ -84,10 +87,12 @@ export const CharacterSearch = ({  }) => {
   return (
     
     <>
-      <article className='main-container'>
-          <h1>STARWARS</h1>
-          <form className='search' onSubmit={handleOnSubmitSearch}>
-            <input onKeyDown={handleKeyPress} 
+      <article className="main-container">
+          <div className={styles.title}>
+            <Image src="/starWarsLogo.png" alt="logo" height={200} width={400} />
+          </div>
+          <form className={styles.searchContainer} onSubmit={handleOnSubmitSearch}>
+            <input className={styles.searchInput} onKeyDown={handleKeyPress} 
               name="name"
               type="search" 
               placeholder="Search for a character" />
@@ -97,9 +102,8 @@ export const CharacterSearch = ({  }) => {
           {
             characterResults.length > 0 ?
             characterResults.map(character => {
-              return <section key={character.name} className="character-info">
-                      <h1 className='character-name'>{character.name}</h1> 
-                        <div className='about-me list-section'>
+              return <section key={character.name} className={styles.listContainer}>
+                        <div className={styles.listSection}>
                           <h2>About {character.name}</h2>
                             <ol>
                               <li>Height: {character.height}</li>
@@ -115,7 +119,7 @@ export const CharacterSearch = ({  }) => {
                               }
                             </ol>
                         </div>
-                        <div className='film-appearances list-section'> 
+                        <div className={styles.listSection}> 
                           <h2>Film Appearances</h2>
                             <ol>
                             {
@@ -127,7 +131,7 @@ export const CharacterSearch = ({  }) => {
                             }
                             </ol>
                         </div>
-                        <div className='starships-flown list-section'> 
+                        <div className={styles.listSection}> 
                           <h2>StarShips Flown</h2>
                             <ol>
                               {
@@ -135,7 +139,7 @@ export const CharacterSearch = ({  }) => {
                                 starships.map(ship => {
                                   return <li key="length">{ship.name}</li>
                                 })
-                                : `No starships here.`
+                                : `${character.name} does not fly any starships.`
                               }
                             </ol>
                         </div>
