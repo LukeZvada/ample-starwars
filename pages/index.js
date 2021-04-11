@@ -5,22 +5,11 @@ import React, { useState, useEffect } from "react"
   //Server Side rendering 
 const defaultEndpoint = 'https://swapi.dev/api/people/'
 
-export const getServerSideProps = async pageContext => {
-  const apiResponse = await fetch(defaultEndpoint)
-  //turn response into json 
-  const character = await apiResponse.json()
-    
-  return {
-    props: {
-      character
-    }
-  }
-}
-
-export const CharacterSearch = ({ character }) => { 
+export const CharacterSearch = ({  }) => { 
   // console.log(character)
   const [characterQuery, setCharacterQuery] = useState('')
   const [characterResults, setCharacterResults] = useState([])
+  const [starships, setStarships] = useState([])
   const [page, updatePage] = useState({
     current: defaultEndpoint
   })
@@ -31,7 +20,7 @@ export const CharacterSearch = ({ character }) => {
   useEffect(() => {
     if (current === defaultEndpoint ) return; 
 
-    async function request () { 
+    const request = async () => { 
       const res = await fetch(current)
       const searchResponse = await res.json();
 
@@ -41,15 +30,26 @@ export const CharacterSearch = ({ character }) => {
       })
 
       setCharacterResults(searchResponse.results)
-      console.log(searchResponse)
     }
-    request();
+    request()
+    .then(async () => {
+      const starships = await Promise.all(
+        characterResults[0].starships.map(sh => {
+          return fetch(`${sh}`)
+          .then(res => res.json())
+        })
+      )
+      setStarships(starships)
+    })
   }, [current]);
-  
-  
+
+
+
   const handleKeyPress = (event) => {
-    setCharacterQuery(event.target.value)
-    console.log(event.target.value)
+    if(event.keyCode === 13) {
+      setCharacterQuery(event.target.value)
+      console.log(event.target.value)
+    }
   }
 
   
@@ -61,11 +61,10 @@ export const CharacterSearch = ({ character }) => {
     updatePage({
       current: endpoint
     })
-    console.log(characterQuery)
-    // console.log(characterResults)
   }
 
   return (
+    
     <>
       <article className='main-container'>
           <h1>STARWARS</h1>
@@ -75,9 +74,7 @@ export const CharacterSearch = ({ character }) => {
               type="search" 
               placeholder="Search for a character" />
           </form>
-          {/* first, check if characterResults.count = 0 and if so, show "no results message" */}
-          {/* if characterResults.count > 0
-              loop over characterResults.results */}
+
 
           {
             characterResults.length > 0 ?
@@ -102,13 +99,19 @@ export const CharacterSearch = ({ character }) => {
                         </div>
                         <div className='starships-flown'> 
                           <h2>StarShips Flown</h2>
-                            <ol>
-                              <li>{character.starships}</li>
+                            <ol key={character.name}>
+                              {
+                                starships.length > 0 ?
+                                starships.map(sh => {
+                                  return <li>{sh.name}</li>
+                                })
+                                : `No starships here.`
+                              }
                             </ol>
                         </div>
                     </section>
                     
-            }) : `Ive searched every galaxy and did not find anyone named ${characterQuery}` 
+            }) : `I've searched every galaxy and did not find anyone named ${characterQuery}`
           }
           </article>
     </>
