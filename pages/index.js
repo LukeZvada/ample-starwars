@@ -1,9 +1,9 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import styles from '../styles/search-home.module.css'
 import React, { useState, useEffect } from "react"
 
   //Server Side rendering 
-const defaultEndpoint = 'https://swapi.dev/api/people/'
+const defaultEndpoint = 'https://swapi.py4e.com/api/people/'
 
 export const CharacterSearch = ({  }) => { 
   // console.log(character)
@@ -56,7 +56,7 @@ export const CharacterSearch = ({  }) => {
   const handleOnSubmitSearch = (e) => { 
     e.preventDefault();
 
-    const endpoint = `https://swapi.dev/api/people/?search=${characterQuery}`
+    const endpoint = `https://swapi.py4e.com/api/people/?search=${characterQuery}`
 
     updatePage({
       current: endpoint
