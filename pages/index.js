@@ -10,6 +10,7 @@ export const CharacterSearch = ({  }) => {
   const [characterQuery, setCharacterQuery] = useState('')
   const [characterResults, setCharacterResults] = useState([])
   const [starships, setStarships] = useState([])
+  const [films, setFilms] = useState([])
   const [page, updatePage] = useState({
     current: defaultEndpoint
   })
@@ -28,13 +29,24 @@ export const CharacterSearch = ({  }) => {
         current,
         ...searchResponse.info
       })
+
       const starships = await Promise.all(
         searchResponse.results[0].starships.map(sh => {
           return fetch(`${sh}`)
           .then(res => res.json())
         })
       )
+      
+      const films = await Promise.all(
+        searchResponse.results[0].films.map(film => {
+          return fetch(`${film}`)
+          .then(res => res.json())
+        })
+      )
 
+      console.log(films)
+      
+      setFilms(films)
       setStarships(starships)
       setCharacterResults(searchResponse.results)
     }
@@ -92,7 +104,13 @@ export const CharacterSearch = ({  }) => {
                         <div className='film-appearances'> 
                           <h2>Film Appearances</h2>
                             <ol>
-                              <li>{character.films}</li>
+                            {
+                                films.length > 0 ?
+                                films.map(film => {
+                                  return <li key="length">{film.title}</li>
+                                })
+                                : `No films here.`
+                            }
                             </ol>
                         </div>
                         <div className='starships-flown'> 
@@ -101,7 +119,7 @@ export const CharacterSearch = ({  }) => {
                               {
                                 starships.length > 0 ?
                                 starships.map(sh => {
-                                  return <li key="MGLT">{sh.name}</li>
+                                  return <li key="length">{sh.name}</li>
                                 })
                                 : `No starships here.`
                               }
