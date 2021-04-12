@@ -3,9 +3,9 @@
 html,
 body {
   background-color: black;
-  background-image: url("../public/starWarsBackgroundEdit.png");
+  background-image: url("../public/StarWarsBackgroundEdit2.png");
   /* height: 150vh; */
-  /* background-repeat: no-repeat; */
+  background-repeat: no-repeat;
   padding: 0;
   margin: 0;
   font-family: 'Exo 2', sans-serif;
