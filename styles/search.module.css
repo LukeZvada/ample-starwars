@@ -10,12 +10,13 @@
   display: grid;
   justify-content: center;
   width: 100%;
+  margin-top: 2rem;
 }
 
 .searchInput { 
   width: 30rem;
   height: 4rem;
-  font-size: 40px;
+  font-size: 30px;
   background-color: gray;
 }
 /* Search Field media query for mobile view */
@@ -28,6 +29,7 @@
 }
 
 /* Profile Section (data results after Search) */
+
 .listContainer { 
   display: grid;
   background-color: #272727;
@@ -35,8 +37,9 @@
   justify-content: center;
   margin: auto;
   margin-top: 2rem;
-  border-radius: 4px;
+  border-radius: 8px;
 }
+
 /* List Container media query for mobile */
 @media (max-width: 600px) {
   .listContainer {
@@ -48,10 +51,18 @@
   display: grid;
   grid-column: auto;
   max-width: 100%;
-  
+  font-size: 24px;
 }
 
+@media (max-width: 600px) {
+  .listSection {
+    font-size: 20px;
+  }
+}
 
+.listTitle {
+  border-bottom: 1px solid white;
+}
 
 
 

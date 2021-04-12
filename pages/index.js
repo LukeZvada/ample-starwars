@@ -104,7 +104,7 @@ export const CharacterSearch = ({  }) => {
             characterResults.map(character => {
               return <section key={character.name} className={styles.listContainer}>
                         <div className={styles.listSection}>
-                          <h2>About {character.name}</h2>
+                          <h2 className={styles.listTitle}>About {character.name}</h2>
                             <ol>
                               <li>Height: {character.height}</li>
                               <li>Weight: {character.mass}</li>
@@ -120,7 +120,7 @@ export const CharacterSearch = ({  }) => {
                             </ol>
                         </div>
                         <div className={styles.listSection}> 
-                          <h2>Film Appearances</h2>
+                          <h2 className={styles.listTitle}>Film Appearances</h2>
                             <ol>
                             {
                                 films.length > 0 ?
@@ -132,7 +132,7 @@ export const CharacterSearch = ({  }) => {
                             </ol>
                         </div>
                         <div className={styles.listSection}> 
-                          <h2>StarShips Flown</h2>
+                          <h2 className={styles.listTitle}>StarShips Flown</h2>
                             <ol>
                               {
                                 starships.length > 0 ?
