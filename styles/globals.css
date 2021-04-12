@@ -2,8 +2,10 @@
 
 html,
 body {
-  /* background-color: black; */
-  background-image: url("../public/starWarsStars.png");
+  background-color: black;
+  background-image: url("../public/starWarsBackgroundEdit.png");
+  /* height: 150vh; */
+  /* background-repeat: no-repeat; */
   padding: 0;
   margin: 0;
   font-family: 'Exo 2', sans-serif;

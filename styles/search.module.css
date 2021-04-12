@@ -2,7 +2,7 @@
 /* Site Title Image */
 .title { 
   display: grid;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* Search Field */
@@ -17,7 +17,7 @@
   width: 30rem;
   height: 4rem;
   font-size: 30px;
-  background-color: gray;
+  background-color: rgba(255, 255, 255, 0.37);
 }
 /* Search Field media query for mobile view */
 @media (max-width: 600px) {
