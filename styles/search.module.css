@@ -1,3 +1,15 @@
+.mainContainer { 
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 0fr;
+  grid-gap: 20px;
+}
+
+/* main query to handle grid layout on mobile */
+@media (max-width: 600px) {
+  .mainContainer {
+    grid-template-columns: auto;
+  }
+}
 
 /* Site Title Image */
 .logo { 
@@ -7,13 +19,17 @@
 
 /* Page Title */
 .pageTitle { 
+  display: grid;
   font-size: 60px;
+  width: 100%;
+  /* justify-content: center; */
+  font-weight: 900;
 }
 
 /* Search Field */
 .searchContainer { 
   display: grid;
-  justify-content: flex;
+  /* justify-content: center; */
   width: 100%;
   margin-top: 2rem;
 }
@@ -49,10 +65,11 @@
 
 .listContainer { 
   display: grid;
+  grid-gap: 5px;
   background-color: #272727;
   width: 30rem;
-  justify-content: center;
-  margin: auto;
+  /* justify-content: center; */
+  /* margin: auto; */
   margin-top: 2rem;
   border-radius: 8px;
 }

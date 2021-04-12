@@ -86,7 +86,7 @@ export const CharacterSearch = ({  }) => {
 
   return (
     <>
-      <article className="main-container">
+      <article className={styles.mainContainer}>
         <aside>
           <div className={styles.logo}>
             <Image src="/starWarsLogo.png" alt="logo" height={100} width={200} />
