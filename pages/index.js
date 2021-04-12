@@ -88,8 +88,12 @@ export const CharacterSearch = ({  }) => {
     
     <>
       <article className="main-container">
-          <div className={styles.title}>
+        <aside>
+          <div className={styles.logo}>
             <Image src="/starWarsLogo.png" alt="logo" height={200} width={400} />
+          </div>
+          <div>
+            <h1 className={styles.pageTitle}>Explore the Galaxies</h1>
           </div>
           <form className={styles.searchContainer} onSubmit={handleOnSubmitSearch}>
             <input className={styles.searchInput} onKeyDown={handleKeyPress} 
@@ -97,6 +101,7 @@ export const CharacterSearch = ({  }) => {
               type="search" 
               placeholder="Search for a character" />
           </form>
+        </aside>
 
 
           {
@@ -145,7 +150,8 @@ export const CharacterSearch = ({  }) => {
                         </div>
                     </section>
                     
-            }) : `I've searched every galaxy and did not find anyone named ${characterQuery}`
+            }) 
+            : `I've searched every galaxy and did not find anyone named ${characterQuery}`
           }
           </article>
     </>
