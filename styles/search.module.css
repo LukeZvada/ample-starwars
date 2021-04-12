@@ -24,6 +24,18 @@
   font-size: 30px;
   background-color: rgba(255, 255, 255, 0.849);
 }
+
+.searchInput::-webkit-search-cancel-button{
+  position:relative;
+  right: 1rem;
+}
+
+/* hover and focus style when cursor moves over search bar */
+.searchInput:hover, .searchInput:focus {
+  border: 1px solid #009688;
+  background-color: white;
+}
+
 /* Search Field media query for mobile view */
 @media (max-width: 600px) {
   .searchInput {
