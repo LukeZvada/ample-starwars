@@ -33,6 +33,15 @@
   margin-left: 4rem;
 }
 
+/* Title media query for mobile view */
+@media (max-width: 600px) {
+  .pageTitle {
+    font-size: 30px; 
+    margin-top: 3rem;
+    margin-left: 1rem;
+  }
+}
+
 /* Search Field */
 .searchContainer { 
   display: grid;
@@ -66,6 +75,7 @@
     width: 17rem;
     height: 2rem;
     font-size: 20px;
+    margin-left: -3rem;
   }
 }
 
