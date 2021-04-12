@@ -2,7 +2,7 @@
 
 .mainContainer { 
   display: grid;
-  grid-template-columns: 3fr 1fr 1fr 0fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
 }
 
@@ -15,19 +15,24 @@
 
 /* Site Title Image */
 .logo { 
-  display: grid;
   justify-content: flex-start;
   margin: 2rem;
 }
 
+@media (max-width: 600px) {
+  .logo {
+    height: 50px;
+    width:100px;
+  }
+}
+
+
 /* Page Title */
 .pageTitle { 
-  display: grid;
   font-size: 60px;
   letter-spacing: 2px;
   /* font-family: 'Exo 2', sans-serif; */
   width: 100%;
-  /* justify-content: center; */
   font-weight: 900;
   margin-top: 18rem;
   margin-left: 4rem;
@@ -44,10 +49,7 @@
 
 /* Search Field */
 .searchContainer { 
-  display: grid;
-  /* justify-content: center; */
   width: 100%;
-  margin-top: 20px;
   margin-left: 4rem;
 }
 
@@ -72,38 +74,40 @@
 /* Search Field media query for mobile view */
 @media (max-width: 600px) {
   .searchInput {
-    width: 17rem;
-    height: 2rem;
+    width: 25rem;
+    height: 3rem;
     font-size: 20px;
     margin-left: -3rem;
   }
 }
 
 /* Profile Section (data results after Search) */
+.about { 
+  list-style: none;
+}
 
 .listContainer { 
-  display: grid;
   grid-gap: 5px;
-  background-color: #424040ee;
+  background-color: #000000de;
   width: 30rem;
-  /* justify-content: center; */
-  /* margin: auto; */
   margin-top: 12rem;
+  margin-left: 10rem;
   border-radius: 8px;
+  list-style-type: none;
 }
 
 /* List Container media query for mobile */
 @media (max-width: 600px) {
   .listContainer {
     width: 20rem;
+    margin-left: 5rem;
   }
 }
 
 .listSection { 
-  display: grid;
-  grid-column: auto;
   max-width: 100%;
   font-size: 24px;
+  list-style-type: none;
 }
 
 @media (max-width: 600px) {
@@ -114,7 +118,9 @@
 
 .listTitle {
   border-bottom: 1px solid white;
+  margin-left: 2rem;
 }
+
 
 
 

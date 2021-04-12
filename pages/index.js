@@ -87,7 +87,7 @@ export const CharacterSearch = ({  }) => {
   return (
     <>
       <article className={styles.mainContainer}>
-        <aside>
+        <aside className={styles.asideContainer}>
           <div className={styles.logo}>
             <Image src="/starWarsLogo.png" alt="logo" height={100} width={200} />
           </div>
@@ -104,12 +104,12 @@ export const CharacterSearch = ({  }) => {
 
 
           {
-            characterResults.length > 0 ?
             characterResults.map(character => {
-              return <section key={character.name} className={styles.listContainer}>
+              return characterResults.length > 0 ?
+                      <section key={character.name} className={styles.listContainer}>
                         <div className={styles.listSection}>
                           <h2 className={styles.listTitle}>About {character.name}</h2>
-                            <ol>
+                            <ol className={styles.about}>
                               <li>Height: {character.height}</li>
                               <li>Weight: {character.mass}</li>
                               <li>Hair Color: {character.hair_color}</li>
@@ -117,7 +117,7 @@ export const CharacterSearch = ({  }) => {
                               {
                                 species.length > 0 ?
                                 species.map(species => {
-                                  return <li key="length">Species: {species.classification}</li>
+                                  return <li key={species._id}>Species: {species.classification}</li>
                                 })
                                 : `No Species info found.`
                               }
@@ -129,7 +129,7 @@ export const CharacterSearch = ({  }) => {
                             {
                                 films.length > 0 ?
                                 films.map(film => {
-                                  return <li key="length">{film.title}</li>
+                                  return <li key={film.url}>{film.title}</li>
                                 })
                                 : `No films here.`
                             }
@@ -141,7 +141,7 @@ export const CharacterSearch = ({  }) => {
                               {
                                 starships.length > 0 ?
                                 starships.map(ship => {
-                                  return <li key="length">{ship.name}</li>
+                                  return <li key={ship.name}>{ship.name}</li>
                                 })
                                 : `${character.name} does not fly any starships.`
                               }
@@ -149,8 +149,8 @@ export const CharacterSearch = ({  }) => {
                         </div>
                     </section>
                     
+                    : console.log(`I've searched every galaxy and did not find anyone named ${characterQuery}`)
             }) 
-            : `I've searched every galaxy and did not find anyone named ${characterQuery}`
           }
           </article>
     </>

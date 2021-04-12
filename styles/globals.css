@@ -3,9 +3,13 @@
 html,
 body {
   background-color: black;
+  background-position: center center;
+  background-repeat: no-repeat; 
+  background-size: cover;
+  background-attachment: fixed;
   background-image: url("../public/StarWarsBackgroundEdit.png");
-  /* height: 150vh; */
-  background-repeat: no-repeat;
+  height: auto;
+  width: 100%;
   padding: 0;
   margin: 0;
   font-family: 'Exo 2', sans-serif;
@@ -23,8 +27,9 @@ a {
 
 ol {
   text-align: left;
-  padding-left: 30px;
+  margin-left: 30px;
   list-style-type: circle;
+
 }
 
 input {
