@@ -1,4 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@600;800&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,600;0,800;1,400;1,600&display=swap');
 
 .mainContainer { 
   display: grid;
@@ -30,10 +30,10 @@
 /* Page Title */
 .pageTitle { 
   font-size: 60px;
-  letter-spacing: 2px;
-  /* font-family: 'Exo 2', sans-serif; */
+  letter-spacing: 4px;
+  font-family: 'Exo 2', sans-serif;
   width: 100%;
-  font-weight: 900;
+  /* font-weight: 900; */
   margin-top: 18rem;
   margin-left: 4rem;
 }
@@ -92,7 +92,7 @@
   width: 30rem;
   margin-top: 12rem;
   margin-left: 10rem;
-  border-radius: 8px;
+  border-radius: 4px;
   list-style-type: none;
 }
 
@@ -119,6 +119,14 @@
 .listTitle {
   border-bottom: 1px solid white;
   margin-left: 2rem;
+  font-size: 28px;
+}
+
+.characterName { 
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+  /* margin-left: 4rem; */
 }
 
 

@@ -9,8 +9,8 @@ import React, { useState, useEffect } from "react"
 const defaultEndpoint = 'https://swapi.py4e.com/api/people/'
 
 export const CharacterSearch = ({  }) => { 
-  const [characterQuery, setCharacterQuery] = useState('')
-  const [characterResults, setCharacterResults] = useState([])
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState([])
   const [starships, setStarships] = useState([])
   const [films, setFilms] = useState([])
   const [species, setSpecies] = useState([])
@@ -20,7 +20,6 @@ export const CharacterSearch = ({  }) => {
   
   const {current} = page 
 
-  
   useEffect(() => {
     if (current === defaultEndpoint ) return; 
 
@@ -59,7 +58,7 @@ export const CharacterSearch = ({  }) => {
       setSpecies(species)
       setFilms(films)
       setStarships(starships)
-      setCharacterResults(searchResponse.results)
+      setSearchResults(searchResponse.results)
     }
     fetchData()
   }, [current]);
@@ -68,7 +67,7 @@ export const CharacterSearch = ({  }) => {
 
   const handleKeyPress = (event) => {
     if(event.keyCode === 13) {
-      setCharacterQuery(event.target.value)
+      setSearchQuery(event.target.value)
       console.log(event.target.value)
     }
   }
@@ -77,7 +76,7 @@ export const CharacterSearch = ({  }) => {
   const handleOnSubmitSearch = (e) => { 
     e.preventDefault();
 
-    const endpoint = `https://swapi.py4e.com/api/people/?search=${characterQuery}`
+    const endpoint = `https://swapi.py4e.com/api/people/?search=${searchQuery}`
 
     updatePage({
       current: endpoint
@@ -104,24 +103,25 @@ export const CharacterSearch = ({  }) => {
 
 
           {
-            characterResults.map(character => {
-              return characterResults.length > 0 ?
+            searchResults.map(character => {
+              return searchResults.length > 0 ?
                       <section key={character.name} className={styles.listContainer}>
                         <div className={styles.listSection}>
-                          <h2 className={styles.listTitle}>About {character.name}</h2>
-                            <ol className={styles.about}>
-                              <li>Height: {character.height}</li>
-                              <li>Weight: {character.mass}</li>
-                              <li>Hair Color: {character.hair_color}</li>
-                              <li>Date of Birth: {character.birth_year}</li>
-                              {
-                                species.length > 0 ?
-                                species.map(species => {
-                                  return <li key={species._id}>Species: {species.classification}</li>
-                                })
-                                : `No Species info found.`
-                              }
-                            </ol>
+                          <h1 className={styles.characterName}> {character.name} </h1>
+                            <h2 className={styles.listTitle}>About </h2>
+                              <ol className={styles.about}>
+                                <li>Height: {character.height}</li>
+                                <li>Weight: {character.mass}</li>
+                                <li>Hair Color: {character.hair_color}</li>
+                                <li>Date of Birth: {character.birth_year}</li>
+                                {
+                                  species.length > 0 ?
+                                  species.map(species => {
+                                    return <li key={species._id}>Species: {species.classification}</li>
+                                  })
+                                  : `No Species info found.`
+                                }
+                              </ol>
                         </div>
                         <div className={styles.listSection}> 
                           <h2 className={styles.listTitle}>Film Appearances</h2>
@@ -136,7 +136,7 @@ export const CharacterSearch = ({  }) => {
                             </ol>
                         </div>
                         <div className={styles.listSection}> 
-                          <h2 className={styles.listTitle}>StarShips Flown</h2>
+                          <h2 className={styles.listTitle}>Starships Flown</h2>
                             <ol>
                               {
                                 starships.length > 0 ?
@@ -149,7 +149,7 @@ export const CharacterSearch = ({  }) => {
                         </div>
                     </section>
                     
-                    : console.log(`I've searched every galaxy and did not find anyone named ${characterQuery}`)
+                    : console.log(`I've searched every galaxy and did not find anyone named ${searchQuery}`)
             }) 
           }
           </article>
