@@ -1,13 +1,14 @@
-import Head from 'next/head'
-import styles from '../styles/search-home.module.css'
 import React, { useState, useEffect } from "react"
+import Image from 'next/image'
+import Head from 'next/head'
+import styles from '../styles/search.module.css'
 
 
 const defaultEndpoint = 'https://swapi.py4e.com/api/people/'
 
 export const CharacterSearch = ({  }) => { 
-  const [characterQuery, setCharacterQuery] = useState('')
-  const [characterResults, setCharacterResults] = useState([])
+  const [searchQuery, setSearchQuery] = useState('')
+  const [searchResults, setSearchResults] = useState([])
   const [starships, setStarships] = useState([])
   const [films, setFilms] = useState([])
   const [species, setSpecies] = useState([])
@@ -17,9 +18,8 @@ export const CharacterSearch = ({  }) => {
   
   const {current} = page 
 
-  
   useEffect(() => {
-    if (current === defaultEndpoint ) return; 
+    if (current === defaultEndpoint ) return
 
     const fetchData = async () => { 
       const res = await fetch(current)
@@ -29,7 +29,6 @@ export const CharacterSearch = ({  }) => {
         current,
         ...searchResponse.info
       })
-
       const starships = await Promise.all(
         searchResponse.results[0].starships.map(ship => {
           return fetch(`${ship}`)
@@ -51,12 +50,10 @@ export const CharacterSearch = ({  }) => {
         })
       )
 
-      console.log(films)
-
       setSpecies(species)
       setFilms(films)
       setStarships(starships)
-      setCharacterResults(searchResponse.results)
+      setSearchResults(searchResponse.results)
     }
     fetchData()
   }, [current]);
@@ -65,8 +62,7 @@ export const CharacterSearch = ({  }) => {
 
   const handleKeyPress = (event) => {
     if(event.keyCode === 13) {
-      setCharacterQuery(event.target.value)
-      console.log(event.target.value)
+      setSearchQuery(event.target.value)
     }
   }
 
@@ -74,7 +70,7 @@ export const CharacterSearch = ({  }) => {
   const handleOnSubmitSearch = (e) => { 
     e.preventDefault();
 
-    const endpoint = `https://swapi.py4e.com/api/people/?search=${characterQuery}`
+    const endpoint = `https://swapi.py4e.com/api/people/?search=${searchQuery}`
 
     updatePage({
       current: endpoint
@@ -82,66 +78,78 @@ export const CharacterSearch = ({  }) => {
   }
 
   return (
-    
     <>
-      <article className='main-container'>
-          <h1>STARWARS</h1>
-          <form className='search' onSubmit={handleOnSubmitSearch}>
-            <input onKeyDown={handleKeyPress} 
-              name="name"
-              type="search" 
-              placeholder="Search for a character" />
+      <Head>
+        <title>Star Wars</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+
+      <article className={styles.mainContainer}>
+        <aside className={styles.asideContainer}>
+          <div className={styles.logo}>
+            <Image src="/starWarsLogo.png" alt="logo" height={100} width={200} />
+          </div>
+          <div>
+            <h1 className={styles.pageTitle}>Explore the Galaxies</h1>
+          </div>
+          <form className={styles.searchContainer} onSubmit={handleOnSubmitSearch}>
+              <input className={styles.searchInput} onKeyDown={handleKeyPress} 
+                name="name"
+                type="search" 
+                placeholder="Search for a character" />
           </form>
+        </aside>
 
 
           {
-            characterResults.length > 0 ?
-            characterResults.map(character => {
-              return <section key={character.name} className="character-info">
-                      <h1 className='character-name'>{character.name}</h1> 
-                        <div className='about-me list-section'>
-                          <h2>About {character.name}</h2>
-                            <ol>
-                              <li>Height: {character.height}</li>
-                              <li>Weight: {character.mass}</li>
-                              <li>Hair Color: {character.hair_color}</li>
-                              <li>Date of Birth: {character.birth_year}</li>
-                              {
-                                species.length > 0 ?
-                                species.map(species => {
-                                  return <li key="length">Species: {species.classification}</li>
-                                })
-                                : `No Species info found.`
-                              }
-                            </ol>
+            searchResults.map(character => {
+              return searchResults.length > 0 ?
+                      <section key={character.name} className={styles.listContainer}>
+                        <div className={styles.listSection}>
+                          <h1 className={styles.characterName}> {character.name} </h1>
+                            <h2 className={styles.listTitle}>About </h2>
+                              <ol className={styles.about}>
+                                <li>Height: {character.height}</li>
+                                <li>Weight: {character.mass}</li>
+                                <li>Hair Color: {character.hair_color}</li>
+                                <li>Date of Birth: {character.birth_year}</li>
+                                {
+                                  species.length > 0 ?
+                                  species.map(species => {
+                                    return <li key={species._id}>Species: {species.classification}</li>
+                                  })
+                                  : `No Species info found.`
+                                }
+                              </ol>
                         </div>
-                        <div className='film-appearances list-section'> 
-                          <h2>Film Appearances</h2>
+                        <div className={styles.listSection}> 
+                          <h2 className={styles.listTitle}>Film Appearances</h2>
                             <ol>
                             {
                                 films.length > 0 ?
                                 films.map(film => {
-                                  return <li key="length">{film.title}</li>
+                                  return <li key={film.url}>{film.title}</li>
                                 })
                                 : `No films here.`
                             }
                             </ol>
                         </div>
-                        <div className='starships-flown list-section'> 
-                          <h2>StarShips Flown</h2>
+                        <div className={styles.listSection}> 
+                          <h2 className={styles.listTitle}>Starships Flown</h2>
                             <ol>
                               {
                                 starships.length > 0 ?
                                 starships.map(ship => {
-                                  return <li key="length">{ship.name}</li>
+                                  return <li key={ship.name}>{ship.name}</li>
                                 })
-                                : `No starships here.`
+                                : `${character.name} does not fly any starships.`
                               }
                             </ol>
                         </div>
                     </section>
                     
-            }) : `I've searched every galaxy and did not find anyone named ${characterQuery}`
+                    : console.log(`I've searched every galaxy and did not find anyone named ${searchQuery}`)
+            }) 
           }
           </article>
     </>

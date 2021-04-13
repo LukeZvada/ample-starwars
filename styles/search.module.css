@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,600;0,800;1,400;1,600&display=swap');
+
+.mainContainer { 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+/* main query to handle grid layout on mobile */
+@media only screen and (max-width: 768px) {
+  .mainContainer {
+    grid-template-columns: auto;
+  }
+}
+
+/* Star Wars Logo */
+.logo { 
+  justify-content: flex-start;
+  margin: 2rem;
+}
+/* Logo  media query for mobile */
+@media only screen and (max-width: 768px) {
+  .logo {
+    height: 50px;
+    width: 100px;
+  }
+}
+/* Logo  media query for tablet */
+@media only screen and (max-width: 992px) {
+  .logo {
+    height: 110px;
+    width: 160px;
+  }
+}
+
+
+/* Search Title */
+.pageTitle { 
+  font-size: 60px;
+  letter-spacing: 6px;
+  font-family: 'Exo 2', sans-serif;
+  width: 100%;
+  margin-top: 18rem;
+  margin-left: 4rem;
+}
+
+/* Title media query for mobile view */
+@media only screen and (max-width: 768px) {
+  .pageTitle {
+    font-size: 28px; 
+    margin-top: 4rem;
+    margin-left: 2rem;
+  }
+}
+/* Title media query for small laptop */
+@media only screen and (max-width: 1640px) {
+  .pageTitle {
+    font-size: 50px; 
+  }
+}
+
+/* Search Field */
+.searchContainer { 
+  width: 100%;
+  margin-left: 4rem;
+}
+
+.searchInput { 
+  width: 50rem;
+  height: 4rem;
+  font-size: 30px;
+  background-color: rgba(255, 255, 255, 0.849);
+}
+
+.searchInput::-webkit-search-cancel-button{
+  position:relative;
+  right: 1rem;
+}
+
+/* hover and focus style when cursor moves over search bar */
+.searchInput:hover, .searchInput:focus {
+  border: 1px solid #009688;
+  background-color: white;
+}
+
+/* Search Field media query for mobile view */
+@media only screen and (max-width: 768px) {
+  .searchInput {
+    width: 25rem;
+    height: 3rem;
+    font-size: 20px;
+    margin-left: -2rem;
+  }
+}
+
+/* Search Field query for small laptop */
+@media only screen and (max-width: 1640px) {
+  .searchInput {
+    width: 38rem;
+  }
+}
+
+/* Profile Section (data results after Search) */
+.about { 
+  list-style: none;
+}
+
+.listContainer { 
+  grid-gap: 5px;
+  background-color: #000000de;
+  width: 30rem;
+  margin-top: 12rem;
+  margin-left: 10rem;
+  border-radius: 4px;
+  list-style-type: none;
+}
+
+/* List Container media query for mobile */
+@media only screen and (max-width: 768px) {
+  .listContainer {
+    width: 20rem;
+    margin-left: 10rem;
+    margin-top: 3rem;
+  }
+}
+
+
+.listSection { 
+  max-width: 100%;
+  font-size: 24px;
+  list-style-type: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .listSection {
+    font-size: 20px;
+  }
+}
+
+.listTitle {
+  border-bottom: 1px solid white;
+  margin-left: 2rem;
+  font-size: 28px;
+}
+
+.characterName { 
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+  /* margin-left: 4rem; */
+}
+
+
+
+
+
+
+
+
+/* template media query */
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
