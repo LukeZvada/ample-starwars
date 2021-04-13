@@ -21,7 +21,7 @@ export const CharacterSearch = ({  }) => {
   const {current} = page 
 
   useEffect(() => {
-    if (current === defaultEndpoint ) return; 
+    if (current === defaultEndpoint ) return
 
     const fetchData = async () => { 
       const res = await fetch(current)
@@ -31,7 +31,6 @@ export const CharacterSearch = ({  }) => {
         current,
         ...searchResponse.info
       })
-
       const starships = await Promise.all(
         searchResponse.results[0].starships.map(ship => {
           return fetch(`${ship}`)
@@ -53,8 +52,6 @@ export const CharacterSearch = ({  }) => {
         })
       )
 
-      console.log(films)
-
       setSpecies(species)
       setFilms(films)
       setStarships(starships)
@@ -68,7 +65,6 @@ export const CharacterSearch = ({  }) => {
   const handleKeyPress = (event) => {
     if(event.keyCode === 13) {
       setSearchQuery(event.target.value)
-      console.log(event.target.value)
     }
   }
 
@@ -85,6 +81,11 @@ export const CharacterSearch = ({  }) => {
 
   return (
     <>
+      <Head>
+        <title>Star Wars</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+
       <article className={styles.mainContainer}>
         <aside className={styles.asideContainer}>
           <div className={styles.logo}>
@@ -94,10 +95,10 @@ export const CharacterSearch = ({  }) => {
             <h1 className={styles.pageTitle}>Explore the Galaxies</h1>
           </div>
           <form className={styles.searchContainer} onSubmit={handleOnSubmitSearch}>
-            <input className={styles.searchInput} onKeyDown={handleKeyPress} 
-              name="name"
-              type="search" 
-              placeholder="Search for a character" />
+              <input className={styles.searchInput} onKeyDown={handleKeyPress} 
+                name="name"
+                type="search" 
+                placeholder="Search for a character" />
           </form>
         </aside>
 

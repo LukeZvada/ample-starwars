@@ -7,43 +7,55 @@
 }
 
 /* main query to handle grid layout on mobile */
-@media (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .mainContainer {
     grid-template-columns: auto;
   }
 }
 
-/* Site Title Image */
+/* Star Wars Logo */
 .logo { 
   justify-content: flex-start;
   margin: 2rem;
 }
-
-@media (max-width: 600px) {
+/* Logo  media query for mobile */
+@media only screen and (max-width: 768px) {
   .logo {
     height: 50px;
-    width:100px;
+    width: 100px;
+  }
+}
+/* Logo  media query for tablet */
+@media only screen and (max-width: 992px) {
+  .logo {
+    height: 110px;
+    width: 160px;
   }
 }
 
 
-/* Page Title */
+/* Search Title */
 .pageTitle { 
   font-size: 60px;
-  letter-spacing: 4px;
+  letter-spacing: 6px;
   font-family: 'Exo 2', sans-serif;
   width: 100%;
-  /* font-weight: 900; */
   margin-top: 18rem;
   margin-left: 4rem;
 }
 
 /* Title media query for mobile view */
-@media (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .pageTitle {
-    font-size: 30px; 
-    margin-top: 3rem;
-    margin-left: 1rem;
+    font-size: 28px; 
+    margin-top: 4rem;
+    margin-left: 2rem;
+  }
+}
+/* Title media query for small laptop */
+@media only screen and (max-width: 1640px) {
+  .pageTitle {
+    font-size: 50px; 
   }
 }
 
@@ -72,12 +84,19 @@
 }
 
 /* Search Field media query for mobile view */
-@media (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .searchInput {
     width: 25rem;
     height: 3rem;
     font-size: 20px;
-    margin-left: -3rem;
+    margin-left: -2rem;
+  }
+}
+
+/* Search Field query for small laptop */
+@media only screen and (max-width: 1640px) {
+  .searchInput {
+    width: 38rem;
   }
 }
 
@@ -97,12 +116,14 @@
 }
 
 /* List Container media query for mobile */
-@media (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .listContainer {
     width: 20rem;
-    margin-left: 5rem;
+    margin-left: 10rem;
+    margin-top: 3rem;
   }
 }
+
 
 .listSection { 
   max-width: 100%;
@@ -110,7 +131,7 @@
   list-style-type: none;
 }
 
-@media (max-width: 600px) {
+@media only screen and (max-width: 768px) {
   .listSection {
     font-size: 20px;
   }
