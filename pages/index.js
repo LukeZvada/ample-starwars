@@ -1,81 +1,19 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
+import { CharacterContext } from "./components/characterProvider"
+import { searchComponent } from "./components/searchComponent"
+
 import Image from 'next/image'
 import Head from 'next/head'
 import styles from '../styles/search.module.css'
 
 
-const defaultEndpoint = 'https://swapi.py4e.com/api/people/'
-
 export const CharacterSearch = ({  }) => { 
+  const { getCharacterData, searchResults, starships, films, species } = useContext(CharacterContext)
   const [searchQuery, setSearchQuery] = useState('')
-  const [searchResults, setSearchResults] = useState([])
-  const [starships, setStarships] = useState([])
-  const [films, setFilms] = useState([])
-  const [species, setSpecies] = useState([])
-  const [page, updatePage] = useState({
-    current: defaultEndpoint
-  })
-  
-  const {current} = page 
 
   useEffect(() => {
-    if (current === defaultEndpoint ) return
-
-    const fetchData = async () => { 
-      const res = await fetch(current)
-      const searchResponse = await res.json();
-
-      updatePage({
-        current,
-        ...searchResponse.info
-      })
-      const starships = await Promise.all(
-        searchResponse.results[0].starships.map(ship => {
-          return fetch(`${ship}`)
-          .then(res => res.json())
-        })
-      )
-      
-      const films = await Promise.all(
-        searchResponse.results[0].films.map(film => {
-          return fetch(`${film}`)
-          .then(res => res.json())
-        })
-      )
-      
-      const species = await Promise.all(
-        searchResponse.results[0].species.map(species => {
-          return fetch(`${species}`)
-          .then(res => res.json())
-        })
-      )
-
-      setSpecies(species)
-      setFilms(films)
-      setStarships(starships)
-      setSearchResults(searchResponse.results)
-    }
-    fetchData()
-  }, [current]);
-
-
-
-  const handleKeyPress = (event) => {
-    if(event.keyCode === 13) {
-      setSearchQuery(event.target.value)
-    }
-  }
-
-  
-  const handleOnSubmitSearch = (e) => { 
-    e.preventDefault();
-
-    const endpoint = `https://swapi.py4e.com/api/people/?search=${searchQuery}`
-
-    updatePage({
-      current: endpoint
-    })
-  }
+  // getCharacterData()
+  }), []
 
   return (
     <>
@@ -92,16 +30,12 @@ export const CharacterSearch = ({  }) => {
           <div>
             <h1 className={styles.pageTitle}>Explore the Galaxies</h1>
           </div>
-          <form className={styles.searchContainer} onSubmit={handleOnSubmitSearch}>
-              <input className={styles.searchInput} onKeyDown={handleKeyPress} 
-                name="name"
-                type="search" 
-                placeholder="Search for a character" />
-          </form>
+          {/* search component goes here */}
+          <searchComponent />
         </aside>
 
 
-          {
+          {/* {
             searchResults.map(character => {
               return searchResults.length > 0 ?
                       <section key={character.name} className={styles.listContainer}>
@@ -150,7 +84,7 @@ export const CharacterSearch = ({  }) => {
                     
                     : console.log(`I've searched every galaxy and did not find anyone named ${searchQuery}`)
             }) 
-          }
+          } */}
           </article>
     </>
   )
