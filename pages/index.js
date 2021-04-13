@@ -1,9 +1,7 @@
+import React, { useState, useEffect } from "react"
 import Image from 'next/image'
 import Head from 'next/head'
 import styles from '../styles/search.module.css'
-// import starWarsLogo from "../images/starWarsLogo.png"
-
-import React, { useState, useEffect } from "react"
 
 
 const defaultEndpoint = 'https://swapi.py4e.com/api/people/'
