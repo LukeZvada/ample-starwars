@@ -1,11 +1,11 @@
 import { SearchComponent } from "../components/searchComponent"
 import Image from 'next/image'
-
 import styles from '../styles/landingPage.module.css'
 
 
 export const LandingPage = () => { 
 
+    //main landing page component. Rendering the logo, title, and search bar (from searchComponent.js). 
     return (
         <aside className={styles.asideContainer}>
             <div className={styles.logo}>

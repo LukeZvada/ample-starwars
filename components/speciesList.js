@@ -3,8 +3,9 @@ import { CharacterContext } from "./characterProvider"
 
 
 export const SpeciesList = ({  }) => { 
-    const {species } = useContext(CharacterContext)
+    const { species } = useContext(CharacterContext)
 
+    //basic component to handle looping through returned species data and returning just the classification
     return (
         <>
             {

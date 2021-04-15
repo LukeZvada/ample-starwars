@@ -6,6 +6,7 @@ import styles from '../styles/characterProfile.module.css'
 export const FilmList = ({  }) => { 
     const { films } = useContext(CharacterContext)
 
+    //basic component to handle looping through film data and returning just the title
     return (
         <div className={styles.listSection}> 
             <h2 className={styles.listTitle}>Film Appearances</h2>

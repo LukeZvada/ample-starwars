@@ -7,7 +7,7 @@ export const SearchComponent = ({  }) => {
     const { getCharacterData } = useContext(CharacterContext)
     const [searchQuery, setSearchQuery] = useState("")
 
-    
+    // search component which is rendered on the landing page
     return (
         <>
             <form className={styles.searchContainer}
@@ -21,7 +21,8 @@ export const SearchComponent = ({  }) => {
                     onChange={e => setSearchQuery(e.target.value)}
                     name="name"
                     type="search" 
-                    placeholder="Search for a character" />
+                    placeholder="Search for a character"
+                    aria-label="Search through site content" />
             </form>
         </>
     )

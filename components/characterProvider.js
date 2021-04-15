@@ -8,6 +8,8 @@ export const CharacterProvider = (props) => {
     const [films, setFilms] = useState([])
     const [species, setSpecies] = useState([])
 
+    //async function to handle searched character query param. If results are returned it moves on to use the url's returned to fetch starships, films, and species. 
+    // If notthing is returned it sets the state to empty arrays to handle no search results. 
         const getCharacterData = async (searchCharacter) => {
             const res = await fetch(`https://swapi.py4e.com/api/people/?search=${searchCharacter}`)
             const searchResponse = await res.json()

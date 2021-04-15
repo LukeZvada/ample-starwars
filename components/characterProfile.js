@@ -9,6 +9,7 @@ import styles from '../styles/characterProfile.module.css'
 export const CharacterProfile = ({  }) => { 
     const { searchResults } = useContext(CharacterContext)
 
+    //main character profile component that renders the character "about me" data. Also rendering the filmList, starshipList, and speciesList components
     return (
     <>
         {

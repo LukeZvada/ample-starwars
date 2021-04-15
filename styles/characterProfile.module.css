@@ -6,17 +6,7 @@
     /* margin-left: 4rem; */
 }
 
-.listTitle {
-    border-bottom: 1px solid white;
-    margin-left: 2rem;
-    font-size: 28px;
-}
-
-.aboutList { 
-    list-style: none;
-    margin: 0;
-}
-
+/* Parent profile list card styling */
 .listContainer { 
     grid-gap: 5px;
     background-color: #000000de;
@@ -27,6 +17,12 @@
     list-style-type: none;
 }
 
+.listSection { 
+    max-width: 100%;
+    font-size: 24px;
+    list-style-type: none;
+    }
+
 /* List Container media query for mobile */
 @media only screen and (max-width: 768px) {
     .listContainer {
@@ -36,23 +32,24 @@
     }
 }
 
-
-.listSection { 
-max-width: 100%;
-font-size: 24px;
-list-style-type: none;
-}
-
 @media only screen and (max-width: 768px) {
     .listSection {
         font-size: 20px;
     }
 }
 
+/* List title on profile card (About, Film Appearances, and Starships Flown) */
 .listTitle {
-border-bottom: 1px solid white;
-margin-left: 2rem;
-font-size: 28px;
+    border-bottom: 1px solid white;
+    margin-left: 2rem;
+    font-size: 28px;
 }
+
+/* About list on profile card. */
+.aboutList { 
+    list-style: none;
+    margin: 0;
+}
+
 
 
