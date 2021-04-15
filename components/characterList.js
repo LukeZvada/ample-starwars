@@ -1,19 +1,20 @@
 import React, { useState, useContext } from "react"
 import styles from '../styles/search.module.css'
 import { CharacterContext } from "./characterProvider"
+import Image from 'next/image'
+import { SearchComponent } from "../components/searchComponent"
 
 
 export const CharacterList = ({  }) => { 
     const { searchResults, starships, films, species } = useContext(CharacterContext)
-  
-
+    
     return (
     <>
         <article className={styles.mainContainer}>
             {
-            searchResults.map(character => {
-                return searchResults.length > 0 ?
-                        <section key={character.name} className={styles.listContainer}>
+                searchResults.count > 0 ?
+                    searchResults.map(character => {
+                    return <section key={character.name} className={styles.listContainer}>
                         <div className={styles.listSection}>
                             <h1 className={styles.characterName}> {character.name} </h1>
                             <h2 className={styles.listTitle}>About </h2>
@@ -24,10 +25,10 @@ export const CharacterList = ({  }) => {
                                 <li>Date of Birth: {character.birth_year}</li>
                                 {
                                     species.length > 0 ?
-                                    species.map(species => {
-                                    return <li key={species._id}>Species: {species.classification}</li>
-                                    })
-                                    : `No Species info found.`
+                                        species.map(species => {
+                                            return <li key={species._id}>Species: {species.classification}</li>
+                                        })
+                                    : `No species info found.`
                                 }
                                 </ol>
                         </div>
@@ -56,9 +57,8 @@ export const CharacterList = ({  }) => {
                             </ol>
                         </div>
                     </section>
-                    
-                    : console.log(`I've searched every galaxy and did not find anyone named ${searchQuery}`)
-            }) 
+                }) 
+                : ""
             }
         </article>
     </>

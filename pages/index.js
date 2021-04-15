@@ -1,5 +1,7 @@
 
 import Head from 'next/head'
+import Link from 'next/link'
+
 import Image from 'next/image'
 import styles from '../styles/search.module.css'
 import { CharacterList } from "../components/characterList"
@@ -13,6 +15,7 @@ export const Home = (props) => {
         <title>Star Wars</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+
       <aside className={styles.asideContainer}>
                 <div className={styles.logo}>
                 <Image src="/starWarsLogo.png" alt="logo" height={100} width={200} />
@@ -22,6 +25,7 @@ export const Home = (props) => {
                 </div>
                 <SearchComponent />
       </aside>
+
       <CharacterList {...props} />
     </>
   )
