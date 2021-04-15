@@ -1,8 +1,13 @@
 import '../styles/globals.css'
-import '../styles/search.module.css'
+import '../styles/landingPage.module.css'
+import { CharacterProvider } from "../components/characterProvider"
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <CharacterProvider>
+      <Component {...pageProps} />
+    </CharacterProvider>
+  )
 }
 
 export default MyApp
