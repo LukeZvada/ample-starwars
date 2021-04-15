@@ -3,7 +3,7 @@ import { CharacterContext } from "./characterProvider"
 import FilmList from "./filmList"
 import SpeciesList from "./speciesList"
 import StarshipList from "./starshipList"
-import styles from '../styles/search.module.css'
+import styles from '../styles/characterProfile.module.css'
 
 
 export const CharacterProfile = ({  }) => { 
@@ -18,7 +18,7 @@ export const CharacterProfile = ({  }) => {
                                 <div className={styles.listSection}>
                                     <h1 className={styles.characterName}> {character.name} </h1>
                                     <h2 className={styles.listTitle}>About </h2>
-                                        <ol className={styles.about}>
+                                        <ol className={styles.aboutList}>
                                             <li>Height: {character.height}</li>
                                             <li>Weight: {character.mass}</li>
                                             <li>Hair Color: {character.hair_color}</li>
