@@ -10,7 +10,7 @@ export const SpeciesList = ({  }) => {
             {
                 species.length > 0 ?
                     species.map(species => {
-                        return <li key={species._id}>Species: {species.classification}</li>
+                        return <li key={species.url}>Species: {species.classification}</li>
                     })
                 : <li>'No species info found.'</li>
             }
