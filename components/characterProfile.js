@@ -6,7 +6,7 @@ import StarshipList from "./starshipList"
 import styles from '../styles/search.module.css'
 
 
-export const CharacterList = ({  }) => { 
+export const CharacterProfile = ({  }) => { 
     const { searchResults } = useContext(CharacterContext)
 
     return (
@@ -37,4 +37,4 @@ export const CharacterList = ({  }) => {
 }
 
 
-export default CharacterList
+export default CharacterProfile
