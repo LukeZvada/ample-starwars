@@ -31,3 +31,7 @@ input {
   font-family: 'Exo 2', sans-serif;
   border-radius: 8px;
 }
+
+span {
+  word-spacing: 4px;
+}

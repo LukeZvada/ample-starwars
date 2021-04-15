@@ -20,10 +20,21 @@ export const CharacterProfile = ({  }) => {
                                     <h1 className={styles.characterName}> {character.name} </h1>
                                     <h2 className={styles.listTitle}>About </h2>
                                         <ol className={styles.aboutList}>
-                                            <li>Height: {character.height}</li>
-                                            <li>Weight: {character.mass}</li>
-                                            <li>Hair Color: {character.hair_color}</li>
-                                            <li>Date of Birth: {character.birth_year}</li>
+                                            <li>
+                                                <label className={styles.formLabel}>Height:</label>
+                                                <span>{character.height}</span>
+                                            </li>
+                                            <li>
+                                                <label className={styles.formLabel}>Weight:</label>
+                                                <span>{character.mass}</span>
+                                            </li>
+                                            <li>
+                                                <label className={styles.formLabel}>Hair Color:</label> 
+                                                <span>{character.hair_color}</span>
+                                            </li>
+                                            <li>
+                                                <label className={styles.formLabel}>Date of Birth:</label> 
+                                                <span>{character.birth_year}</span></li>
                                             <SpeciesList />
                                         </ol>
                                 </div>

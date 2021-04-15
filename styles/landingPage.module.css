@@ -17,13 +17,15 @@
 /* Star Wars Logo */
 .logo { 
   justify-content: flex-start;
-  margin: 2rem;
+  margin-left: 4rem;
+  margin-top: 2rem;
 }
 /* Logo  media query for mobile */
 @media only screen and (max-width: 768px) {
   .logo {
     height: 50px;
     width: 100px;
+    margin-left: 2rem;
   }
 }
 /* Logo  media query for tablet */
@@ -90,8 +92,8 @@
 @media only screen and (max-width: 768px) {
   .searchInput {
     width: 25rem;
-    height: 3rem;
-    font-size: 20px;
+    height: 4rem;
+    font-size: 28px;
     margin-left: -2rem;
   }
 }
