@@ -9,10 +9,8 @@ export const CharacterProvider = (props) => {
     const [species, setSpecies] = useState([])
 
         const getCharacterData = async (searchCharacter) => {
-            console.log("got to get character data", searchCharacter)
             const res = await fetch(`https://swapi.py4e.com/api/people/?search=${searchCharacter}`)
             const searchResponse = await res.json()
-            console.log(searchResponse)
             
             if (searchResponse.count > 0) {
                 const starships = await Promise.all(
