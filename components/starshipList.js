@@ -18,7 +18,7 @@ export const StarshipList = ({  }) => {
                             starships.map(ship => {
                             return <li key={ship.name}>{ship.name}</li>
                         })
-                        : `${character.name} does not fly any starships.`
+                        : <li>`Not a fan of flying`</li>
                         }
                     </ol>
                 </div>

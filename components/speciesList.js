@@ -14,7 +14,7 @@ export const SpeciesList = ({  }) => {
                     species.map(species => {
                         return <li key={species._id}>Species: {species.classification}</li>
                     })
-                : `No species info found.`
+                : <li>'No species info found.'</li>
             }
         </>
     )
