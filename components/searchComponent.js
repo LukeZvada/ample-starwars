@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react"
-import styles from '../../styles/search.module.css'
+import React, { useState, useContext } from "react"
+import styles from '../styles/search.module.css'
 import { CharacterContext } from "./characterProvider"
 
 
-export const searchComponent = ({  }) => { 
-    const { searchCharacter } = useContext(CharacterContext)
+export const SearchComponent = ({  }) => { 
+    const { getCharacterData } = useContext(CharacterContext)
 
     return (
         <>
@@ -12,7 +12,7 @@ export const searchComponent = ({  }) => {
                 <input className={styles.searchInput} 
                 onSubmit={
                     (changeEvent) => {
-                        searchCharacter(changeEvent.target.value)
+                        getCharacterData(changeEvent.target.value)
                     }
                 } 
                 name="name"
@@ -23,4 +23,4 @@ export const searchComponent = ({  }) => {
     )
 }
 
-export default searchComponent
+export default SearchComponent
