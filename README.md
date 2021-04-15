@@ -2,7 +2,8 @@ StarWars single page application with responsive design code test for Ample.
 
 ![desktopScreenshot](https://user-images.githubusercontent.com/67559287/114824760-2e1aa080-9d7a-11eb-8cab-22ca0cd2ee94.png)
 
-![mobileScreenshot](https://user-images.githubusercontent.com/67559287/114824735-26f39280-9d7a-11eb-9524-ea71f81ae9a6.png)
+![mobileScreenshot1](https://user-images.githubusercontent.com/67559287/114918421-ea588300-9ddb-11eb-9dca-7024a5952fc8.png)
+
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
