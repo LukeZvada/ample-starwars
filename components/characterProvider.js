@@ -40,12 +40,12 @@ export const CharacterProvider = (props) => {
                 setFilms(films)
                 setStarships(starships)
                 setSearchResults(searchResponse.results)
-                } else {
-                    setSpecies([])
-                    setFilms([])
-                    setStarships([])
-                    setSearchResults([])
-                }
+            } else {
+                setSpecies([])
+                setFilms([])
+                setStarships([])
+                setSearchResults([])
+            }
         }
 
     return (

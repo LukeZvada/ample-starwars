@@ -1,18 +1,17 @@
 import React, { useState, useContext } from "react"
 import styles from '../styles/search.module.css'
 import { CharacterContext } from "./characterProvider"
-import Image from 'next/image'
-import { SearchComponent } from "../components/searchComponent"
+import { FilmList } from "./filmList"
 
 
 export const CharacterList = ({  }) => { 
     const { searchResults, starships, films, species } = useContext(CharacterContext)
-    
+
     return (
     <>
         <article className={styles.mainContainer}>
             {
-                searchResults.count > 0 ?
+                searchResults.length > 0 ?
                     searchResults.map(character => {
                     return <section key={character.name} className={styles.listContainer}>
                         <div className={styles.listSection}>
@@ -32,18 +31,7 @@ export const CharacterList = ({  }) => {
                                 }
                                 </ol>
                         </div>
-                        <div className={styles.listSection}> 
-                            <h2 className={styles.listTitle}>Film Appearances</h2>
-                            <ol>
-                            {
-                                films.length > 0 ?
-                                films.map(film => {
-                                    return <li key={film.url}>{film.title}</li>
-                                })
-                                : `No films here.`
-                            }
-                            </ol>
-                        </div>
+                        <FilmList />
                         <div className={styles.listSection}> 
                             <h2 className={styles.listTitle}>Starships Flown</h2>
                             <ol>

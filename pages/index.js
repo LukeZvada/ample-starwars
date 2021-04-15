@@ -15,18 +15,20 @@ export const Home = (props) => {
         <title>Star Wars</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      <article className={styles.mainContainer}>
 
-      <aside className={styles.asideContainer}>
-                <div className={styles.logo}>
-                <Image src="/starWarsLogo.png" alt="logo" height={100} width={200} />
-                </div>
-                <div>
-                <h1 className={styles.pageTitle}>Explore the Galaxies</h1>
-                </div>
-                <SearchComponent />
-      </aside>
+        <aside className={styles.asideContainer}>
+          <div className={styles.logo}>
+            <Image src="/starWarsLogo.png" alt="logo" height={100} width={200} />
+          </div>
+          <div>
+            <h1 className={styles.pageTitle}>Explore the Galaxies</h1>
+          </div>
+          <SearchComponent />
+        </aside>
 
       <CharacterList {...props} />
+      </article>
     </>
   )
 }
