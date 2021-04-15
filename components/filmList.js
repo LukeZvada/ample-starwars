@@ -18,7 +18,7 @@ export const FilmList = ({  }) => {
                     : `No films here.`
                 }
                 </ol>
-    </div>
+        </div>
     )
 }
 

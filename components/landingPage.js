@@ -9,7 +9,7 @@ export const LandingPage = () => {
     return (
         <aside className={styles.asideContainer}>
             <div className={styles.logo}>
-                <Image src="/starWarsLogo.png" alt="logo" height={100} width={200} />
+                <Image src="/starWarsLogo.png" alt="Starwars" height={100} width={200} />
             </div>
             <div>
                 <h1 className={styles.pageTitle}>Explore the Galaxies</h1>

@@ -15,7 +15,13 @@ export const StarshipList = ({  }) => {
                         {
                         starships.length > 0 ?
                             starships.map(ship => {
-                            return <li key={ship.name}>{ship.name}</li>
+                            return<ol> 
+                                    <li key={ship.name}>{ship.name}</li>
+                                    <ol class={styles.aboutList}>
+                                        <li>Class: {ship.starship_class}</li>
+                                        <li>HyperDrive Rating: {ship.starship_class}</li>
+                                    </ol>
+                                </ol>
                         })
                         : <li>`Not a fan of flying`</li>
                         }
