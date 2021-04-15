@@ -12,6 +12,7 @@ export const Home = (props) => {
         <title>Star Wars</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      
       <article className={styles.mainContainer}>
         <LandingPage />
         <CharacterProfile />
