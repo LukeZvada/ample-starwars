@@ -1,7 +1,7 @@
 import { SearchComponent } from "../components/searchComponent"
 import Image from 'next/image'
 
-import styles from '../styles/search.module.css'
+import styles from '../styles/landingPage.module.css'
 
 
 export const LandingPage = () => { 

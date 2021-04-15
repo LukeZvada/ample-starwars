@@ -1,6 +1,6 @@
 import '../styles/globals.css'
-import '../styles/search.module.css'
-import { CharacterProvider, CharacterContext } from "../components/characterProvider"
+import '../styles/landingPage.module.css'
+import { CharacterProvider } from "../components/characterProvider"
 
 function MyApp({ Component, pageProps }) {
   return (

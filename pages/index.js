@@ -1,6 +1,6 @@
 
 import Head from 'next/head'
-import styles from '../styles/search.module.css'
+import styles from '../styles/landingPage.module.css'
 import { CharacterProfile } from "../components/characterProfile"
 import LandingPage from '../components/landingPage'
 

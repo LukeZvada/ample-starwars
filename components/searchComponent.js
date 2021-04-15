@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react"
-import styles from '../styles/search.module.css'
+import styles from '../styles/landingPage.module.css'
 import { CharacterContext } from "./characterProvider"
 
 
