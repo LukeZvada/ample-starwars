@@ -1,9 +1,7 @@
 
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/search.module.css'
 import { CharacterProfile } from "../components/characterProfile"
-import { SearchComponent } from "../components/searchComponent"
 import LandingPage from '../components/landingPage'
 
 export const Home = (props) => { 
