@@ -1,7 +1,5 @@
 import React, { useContext } from "react"
 import { CharacterContext } from "./characterProvider"
-import styles from '../styles/search.module.css'
-
 
 
 export const SpeciesList = ({  }) => { 

@@ -3,7 +3,6 @@ import { CharacterContext } from "./characterProvider"
 import styles from '../styles/search.module.css'
 
 
-
 export const StarshipList = ({  }) => { 
     const {starships } = useContext(CharacterContext)
 
