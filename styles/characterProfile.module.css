@@ -3,6 +3,7 @@
     display: grid;
     place-items: center;
     font-size: 35px;
+    letter-spacing: 2px;
     /* margin-left: 4rem; */
 }
 
@@ -44,6 +45,7 @@
     border-bottom: 1px solid white;
     margin-left: 2rem;
     font-size: 28px;
+    letter-spacing: 2px;
 }
 
 /* About list on profile card. */

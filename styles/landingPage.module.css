@@ -86,6 +86,7 @@
 .searchInput:hover, .searchInput:focus {
   border: 1px solid #009688;
   background-color: white;
+  box-shadow: 0px 5px 40px 0px #6b6b6bde;
 }
 
 /* Search Field media query for mobile view */
