@@ -59,7 +59,11 @@
 }
 
 .noResultsListSection {
-    display: flex;
+    display: grid;
+    align-items: flex-end;
+    grid-column-end: none;
+    margin-right: 40rem;
+    margin-top: -2rem;
 }
 
 
