@@ -14,9 +14,9 @@ export const SpeciesList = ({  }) => {
                 species.length > 0 ?
                     species.map(species => {
                         return <li key={species.url}>
-                                <label className={styles.formLabel}>Species: </label> 
-                                <span>{species.classification}</span>
-                            </li>
+                                    <label className={styles.formLabel}>Species: </label> 
+                                    <span>{species.classification}</span>
+                                </li>
                     })
                 : <li>'No species info found.'</li>
             }
