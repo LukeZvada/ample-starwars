@@ -7,10 +7,15 @@ import styles from '../styles/characterProfile.module.css'
 
 
 export const CharacterProfile = ({  }) => { 
-    const { searchResults } = useContext(CharacterContext)
-    console.log(searchResults)
-    //main character profile component that renders the character "about me" data. Also rendering the filmList, starshipList, and speciesList components
-    if (searchResults.length === 1) {
+    const { searchResults, searchQuery } = useContext(CharacterContext)
+
+    //first checking if the user is conducting a search 
+    //if the user has not conducted a search return nothing 
+    if (searchQuery === "" ) {
+        return null
+
+    //if the search conducted returns only one character show them the character profile for that one returned user
+    } else if (searchResults.length === 1) {
         return (
             <>
                 {
@@ -45,7 +50,8 @@ export const CharacterProfile = ({  }) => {
                 }
             </>
         )
-    } else {
+    //is the search conducted returns more than one result then show them a list of the character names returned and message use to use the list as reference and search again
+    } else if (searchResults.length > 1) {
         return (
             <>
                 <h1>Your search resulted in multiple results. Please use the list below for reference and search again!</h1>
@@ -56,6 +62,13 @@ export const CharacterProfile = ({  }) => {
                                     </div>
                             }) 
                     }
+            </>
+        )
+    //if the user conducted a search that did not yeild results. Return a message to notify the user. 
+    } else {
+        return (
+            <>
+                <p>Please enter a valid character.</p>
             </>
         )
     }
