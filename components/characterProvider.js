@@ -15,7 +15,7 @@ export const CharacterProvider = (props) => {
             //setting the state of the search query so I can use it in characterProfile to handle mulitple results and unvalid requests
             setSearchQuery(searchCharacter)
 
-            //fetch to aws api gateway. Working beautifully. However, for whatever reason if this does not work when you clone my code down use "https://swapi.py4e.com/api/people/?search=${searchCharacter}"
+            //fetch to aws api gateway thats routing to https://swapi.py4e.com/api/people/
             const res = await fetch(`https://6a3qc7kzj1.execute-api.us-west-2.amazonaws.com/prod/people/?search=${searchCharacter}`)
             const searchResponse = await res.json()
             
