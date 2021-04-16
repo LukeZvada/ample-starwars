@@ -88,8 +88,10 @@
         .multipleResultsTitle { 
             display: grid;
             place-items: center;
-            max-width: 100%;
-            margin: 0;
+            max-width: 75%;
+            margin-left: 2.5rem;
+            color: red;
+            font-size: 26px
         }
 }
 

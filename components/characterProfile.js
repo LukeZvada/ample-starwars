@@ -54,11 +54,11 @@ export const CharacterProfile = ({  }) => {
     } else if (searchResults.length > 1) {
         return (
             <>
-                <h1 className={styles.multipleResultsTitle}>Your search resulted in multiple results. Please use the list below for reference and search again!</h1>
+                <p className={styles.multipleResultsTitle}>Your search resulted in multiple results. Please use the list below for reference and search again!</p>
                     {
                         searchResults.map(character => {
                             return <div className={styles.multipleResultsListSection}>
-                                        <h2 className={styles.noResultsCharacterName}> {character.name} </h2>
+                                        <h3 className={styles.noResultsCharacterName}> {character.name} </h3>
                                     </div>
                             }) 
                     }
