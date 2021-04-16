@@ -7,35 +7,12 @@
   grid-gap: 20px;
 }
 
-/* main query to handle grid layout on mobile */
-@media only screen and (max-width: 768px) {
-  .mainContainer {
-    grid-template-columns: auto;
-  }
-}
-
 /* Star Wars Logo */
 .logo { 
   justify-content: flex-start;
   margin-left: 4rem;
   margin-top: 2rem;
 }
-/* Logo  media query for mobile */
-@media only screen and (max-width: 768px) {
-  .logo {
-    height: 50px;
-    width: 100px;
-    margin-left: 2rem;
-  }
-}
-/* Logo  media query for tablet */
-@media only screen and (max-width: 992px) {
-  .logo {
-    height: 110px;
-    width: 160px;
-  }
-}
-
 
 /* Page Title ("Explore the Galaxies") */
 .pageTitle { 
@@ -45,21 +22,6 @@
   width: 100%;
   margin-top: 18rem;
   margin-left: 4rem;
-}
-
-/* Title media query for mobile view */
-@media only screen and (max-width: 768px) {
-  .pageTitle {
-    font-size: 28px; 
-    margin-top: 4rem;
-    margin-left: 2rem;
-  }
-}
-/* Title media query for small laptop */
-@media only screen and (max-width: 1640px) {
-  .pageTitle {
-    font-size: 50px; 
-  }
 }
 
 /* Search Field */
@@ -89,21 +51,53 @@
   box-shadow: 0px 5px 20px 0px #6b6b6bde;
 }
 
-/* Search Field media query for mobile view */
-@media only screen and (max-width: 768px) {
-  .searchInput {
-    width: 25rem;
-    height: 4rem;
-    font-size: 28px;
-    margin-left: -2rem;
-  }
+/* media query for mobile phone landscape & portrait*/
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 812px) {
+    .mainContainer {
+      grid-template-columns: auto;
+    }
+    .logo {
+      height: 50px;
+      width: 160px;
+      margin-left: 2.5rem;
+    }
+    .pageTitle {
+      font-size: 51px; 
+      margin-top: 12rem;
+      margin-left: 2.5rem;
+    }
+    .searchInput {
+      width: 25rem;
+      height: 5rem;
+      font-size: 28px;
+      margin-left: -1.5rem;
+    }
 }
 
-/* Search Field query for small laptop */
-@media only screen and (max-width: 1640px) {
-  .searchInput {
-    width: 38rem;
-  }
+/* media query for tablets landscape & portrait */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .pageTitle {
+      font-size: 65px; 
+    }
+    .searchInput {
+      width: 47rem;
+    }
 }
 
-
+/* media query for laptops */
+@media screen 
+  and (min-device-width: 1200px) 
+  and (max-device-width: 1600px) 
+  and (-webkit-min-device-pixel-ratio: 1) { 
+    .pageTitle {
+      font-size: 50px; 
+    }
+    .searchInput {
+      width: 38rem;
+    }
+  }

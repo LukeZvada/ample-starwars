@@ -26,15 +26,21 @@
     }
 
 /* List Container media query for mobile */
-@media only screen and (max-width: 768px) {
-    .listContainer {
-        width: 20rem;
-        margin-left: 10rem;
-        margin-top: 3rem;
-    }
+@media only screen
+    and (min-device-width: 320px) 
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        .listContainer {
+            width: 20rem;
+            margin-left: 10rem;
+            margin-top: 3rem;
+        }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen
+    and (min-device-width: 320px) 
+    and (max-device-width: 480px)
+    and (-webkit-min-device-pixel-ratio: 2) {
     .listSection {
         font-size: 20px;
     }
@@ -61,9 +67,27 @@
 .noResultsListSection {
     display: grid;
     align-items: flex-end;
-    grid-column-end: none;
+    /* grid-column-end: none; */
     margin-right: 40rem;
     margin-top: -2rem;
 }
 
+.unvalidCharacterMessage { 
+    margin-top: 35rem;
+    font-size: 40px; 
+}
 
+
+@media only screen and (max-width: 768px) {
+    .unvalidCharacterMessage {
+        font-size: 40px;
+        margin-top: 0;
+        margin-left: 4rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .noResultsListSection {
+        display: grid;
+    }
+}
