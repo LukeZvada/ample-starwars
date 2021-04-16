@@ -11,9 +11,7 @@ export const LandingPage = () => {
             <div className={styles.logo}>
                 <Image src="/starWarsLogo.png" alt="Starwars" height={100} width={200} />
             </div>
-            <div>
-                <h1 className={styles.pageTitle}>Explore the Galaxies</h1>
-            </div>
+            <h1 className={styles.pageTitle}>Explore the Galaxies</h1>
             <SearchComponent />
         </aside>
     )

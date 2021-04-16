@@ -25,27 +25,6 @@
     list-style-type: none;
     }
 
-/* List Container media query for mobile */
-@media only screen
-    and (min-device-width: 320px) 
-    and (max-device-width: 480px)
-    and (-webkit-min-device-pixel-ratio: 2) {
-        .listContainer {
-            width: 20rem;
-            margin-left: 10rem;
-            margin-top: 3rem;
-        }
-}
-
-@media only screen
-    and (min-device-width: 320px) 
-    and (max-device-width: 480px)
-    and (-webkit-min-device-pixel-ratio: 2) {
-    .listSection {
-        font-size: 20px;
-    }
-}
-
 /* List title on profile card (About, Film Appearances, and Starships Flown) */
 .listTitle {
     border-bottom: 1px solid white;
@@ -75,19 +54,45 @@
 .unvalidCharacterMessage { 
     margin-top: 35rem;
     font-size: 40px; 
+    color: red;
 }
 
 
-@media only screen and (max-width: 768px) {
-    .unvalidCharacterMessage {
-        font-size: 40px;
-        margin-top: 0;
-        margin-left: 4rem;
-    }
+@media only screen 
+    and (min-device-width: 320px)
+    and (max-width: 1200px) {
+        .unvalidCharacterMessage {
+            font-size: 27px;
+            margin-top: 0;
+            margin-left: 2rem;
+            color: red;
+        }
+        .listContainer {
+            width: 85%;
+            margin: 3rem auto;
+            margin-top: 3rem;
+        }
+        .listSection {
+            font-size: 20px;
+        }
+        .mainContainer {
+            grid-gap: 0;
+            place-items: center;
+        }
+        .noResultsListSection {
+            display: grid;
+            place-items: center;
+            max-width: 100%;
+            margin: 0;
+        }
 }
 
-@media only screen and (max-width: 768px) {
-    .noResultsListSection {
-        display: grid;
-    }
+/* tablet view */
+@media only screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1024px) {
+        .listContainer {
+            margin: 9rem;
+        }
 }
+

@@ -68,7 +68,7 @@ export const CharacterProfile = ({  }) => {
     } else {
         return (
             <>
-                <p className={styles.unvalidCharacterMessage}>Please enter a valid character.</p>
+                <p className={styles.unvalidCharacterMessage}>Please enter a valid character</p>
             </>
         )
     }
