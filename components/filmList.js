@@ -16,7 +16,7 @@ export const FilmList = ({  }) => {
                     films.map(film => {
                         return <li key={film.url}>{film.title}</li>
                     })
-                    : `No films here.`
+                    : `No films appearances in the database.`
                 }
                 </ol>
         </div>
