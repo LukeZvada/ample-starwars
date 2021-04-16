@@ -14,7 +14,6 @@ export const CharacterProvider = (props) => {
         const getCharacterData = async (searchCharacter) => {
             //setting the state of the searchQuery with the value of the what was type in the search bar so I can use it in characterProfile to handle mulitple results and unvalid requests
             setSearchQuery(searchCharacter)
-
             //fetch to aws api gateway thats routing to https://swapi.py4e.com/api/people/
             const res = await fetch(`https://6a3qc7kzj1.execute-api.us-west-2.amazonaws.com/prod/people/?search=${searchCharacter}`)
             const searchResponse = await res.json()
