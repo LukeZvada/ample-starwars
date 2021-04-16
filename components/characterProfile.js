@@ -55,7 +55,7 @@ export const CharacterProfile = ({  }) => {
         return (
             <>
                 <div className={styles.multipleResultsContainer}>
-                    <p className={styles.multipleResultsTitle}><strong>Your search yeilded multiple results. Please use the list below for reference and search again!</strong></p>
+                    <p className={styles.multipleResultsTitle}><strong>Your search yielded multiple results. Please use the list below for reference and search again!</strong></p>
                         {
                             searchResults.map(character => {
                                 return <div className={styles.multipleResultsListSection}>
