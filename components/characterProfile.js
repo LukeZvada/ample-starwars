@@ -8,12 +8,12 @@ import styles from '../styles/characterProfile.module.css'
 
 export const CharacterProfile = ({  }) => { 
     const { searchResults } = useContext(CharacterContext)
-
+    console.log(searchResults)
     //main character profile component that renders the character "about me" data. Also rendering the filmList, starshipList, and speciesList components
     return (
     <>
         {
-            searchResults.length > 0 ?
+            searchResults.length === 1 ?
                 searchResults.map(character => {
                     return <section key={character.name} className={styles.listContainer}>
                                 <div className={styles.listSection}>
@@ -42,9 +42,16 @@ export const CharacterProfile = ({  }) => {
                                 <StarshipList />
                             </section>
             }) 
-            : ""
-        }
-    </>
+            : 
+            searchResults.map(character => {
+               return <div className={styles.noResultListSection}>
+                        <h1 className={styles.noResultsCharacterName}> {character.name} </h1>
+                    </div>
+            
+        })
+        
+    }
+            </>
     )
 }
 

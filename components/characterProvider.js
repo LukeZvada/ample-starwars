@@ -11,7 +11,7 @@ export const CharacterProvider = (props) => {
     //async function to handle searched character query param. If results are returned it moves on to use the url's returned to fetch starships, films, and species. 
     // If notthing is returned it sets the state to empty arrays to handle no search results. 
         const getCharacterData = async (searchCharacter) => {
-            const res = await fetch(`https://swapi.py4e.com/api/people/?search=${searchCharacter}`)
+            const res = await fetch(`https://6a3qc7kzj1.execute-api.us-west-2.amazonaws.com/prod/people/?search=${searchCharacter}`)
             const searchResponse = await res.json()
             
             if (searchResponse.count > 0) {
@@ -19,6 +19,7 @@ export const CharacterProvider = (props) => {
                     searchResponse.results[0].starships.map(ship => {
                         return fetch(`${ship}`)
                         .then(res => res.json())
+                        .catch(err => console.error(err))
                     })
                 )
                 
@@ -26,6 +27,7 @@ export const CharacterProvider = (props) => {
                     searchResponse.results[0].films.map(film => {
                         return fetch(`${film}`)
                         .then(res => res.json())
+                        .catch(err => console.error(err))
                     })
                 )
                 
@@ -33,6 +35,7 @@ export const CharacterProvider = (props) => {
                     searchResponse.results[0].species.map(species => {
                         return fetch(`${species}`)
                         .then(res => res.json())
+                        .catch(err => console.error(err))
                     })
                 )
         

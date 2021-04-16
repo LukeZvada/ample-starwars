@@ -58,5 +58,8 @@
     margin: 18px;
 }
 
+.noResultsListSection {
+    display: flex;
+}
 
 
