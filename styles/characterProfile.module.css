@@ -39,6 +39,7 @@
     margin: 0;
 }
 
+/* handling spacing between label and span in about section */
 .formLabel {
     margin-right: 10px;
 }
