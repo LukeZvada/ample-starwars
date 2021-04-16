@@ -12,7 +12,7 @@ export const CharacterProvider = (props) => {
     //async function to handle searched character query param. If results are returned it moves on to use the url's returned to fetch starships, films, and species. 
     // If nothing is returned it sets the state to empty arrays to handle no search results. 
         const getCharacterData = async (searchCharacter) => {
-            //setting the state of the search query so I can use it in characterProfile to handle mulitple results and unvalid requests
+            //setting the state of the searchQuery with the value of the what was type in the search bar so I can use it in characterProfile to handle mulitple results and unvalid requests
             setSearchQuery(searchCharacter)
 
             //fetch to aws api gateway thats routing to https://swapi.py4e.com/api/people/

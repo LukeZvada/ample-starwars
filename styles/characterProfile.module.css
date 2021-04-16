@@ -57,6 +57,17 @@
     color: red;
 }
 
+.multipleResultsContainer {
+    display: grid; 
+    grid-template-columns: auto;
+    margin-top: 15rem;
+}
+
+.multipleResultsTitle {
+    font-size: 28px;
+    color: red
+}
+
 
 @media only screen 
     and (min-device-width: 320px)

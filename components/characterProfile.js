@@ -54,7 +54,8 @@ export const CharacterProfile = ({  }) => {
     } else if (searchResults.length > 1) {
         return (
             <>
-                <p className={styles.multipleResultsTitle}>Your search resulted in multiple results. Please use the list below for reference and search again!</p>
+                <div className={styles.multipleResultsContainer}>
+                <p className={styles.multipleResultsTitle}><strong>Your search resulted in multiple results. Please use the list below for reference and search again!</strong></p>
                     {
                         searchResults.map(character => {
                             return <div className={styles.multipleResultsListSection}>
@@ -62,6 +63,7 @@ export const CharacterProfile = ({  }) => {
                                     </div>
                             }) 
                     }
+                </div>
             </>
         )
     //if the user conducted a search that did not yeild results. Return a message to notify the user. 
