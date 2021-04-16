@@ -5,7 +5,8 @@ import styles from '../styles/characterProfile.module.css'
 
 export const StarshipList = ({  }) => { 
     const {starships } = useContext(CharacterContext)
-
+    
+    //basic component to handle looping through returned starship data and returning just the ship's name
     return (
         <>
             {

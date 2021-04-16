@@ -1,10 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@100&display=swap');
 
-html,
 body {
   background-color: black;
   background-repeat: no-repeat; 
-  background-image: url("../public/StarWarsBackgroundEdit3.png");
+  background-image: url("../public/StarWarsBackgroundEdit3.png") ;
   height: auto;
   width: 100%;
   padding: 0;
@@ -26,10 +25,18 @@ ol {
   text-align: left;
   margin-left: 30px;
   list-style-type: circle;
-
 }
 
 input {
   font-family: 'Exo 2', sans-serif;
   border-radius: 8px;
 }
+
+/* 
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 1200px) {
+    body {
+      background-position: 20%;
+    }
+  } */

@@ -3,56 +3,123 @@
     display: grid;
     place-items: center;
     font-size: 35px;
+    letter-spacing: 2px;
     /* margin-left: 4rem; */
 }
 
-.listTitle {
-    border-bottom: 1px solid white;
-    margin-left: 2rem;
-    font-size: 28px;
-}
-
-.aboutList { 
-    list-style: none;
-    margin: 0;
-}
-
+/* Parent profile list card styling */
 .listContainer { 
     grid-gap: 5px;
-    background-color: #000000de;
+    background-color: #1d1d1dde;
     width: 30rem;
     margin-top: 12rem;
     margin-left: 10rem;
     border-radius: 4px;
     list-style-type: none;
+    box-shadow: 0px 5px 40px 0px #1d1d1dde;
 }
-
-/* List Container media query for mobile */
-@media only screen and (max-width: 768px) {
-    .listContainer {
-        width: 20rem;
-        margin-left: 10rem;
-        margin-top: 3rem;
-    }
-}
-
 
 .listSection { 
-max-width: 100%;
-font-size: 24px;
-list-style-type: none;
-}
-
-@media only screen and (max-width: 768px) {
-    .listSection {
-        font-size: 20px;
+    max-width: 100%;
+    font-size: 24px;
+    list-style-type: none;
     }
-}
 
+/* List title on profile card (About, Film Appearances, and Starships Flown) */
 .listTitle {
-border-bottom: 1px solid white;
-margin-left: 2rem;
-font-size: 28px;
+    border-bottom: 1px solid white;
+    margin-left: 2rem;
+    font-size: 28px;
+    letter-spacing: 2px;
 }
 
+/* About list on profile card. */
+.aboutList { 
+    list-style: none;
+    margin: 0;
+}
+
+/* handling spacing between label and span in about section */
+.formLabel {
+    margin-right: 10px;
+}
+
+/* search is not valid message */
+.unvalidCharacterMessage { 
+    margin-top: 35rem;
+    font-size: 40px; 
+    color: red;
+}
+
+/* search yeilded multiple results message */
+.multipleResultsContainer {
+    display: grid; 
+    grid-template-columns: auto;
+    margin-top: 15rem;
+    background-color: #1d1d1dde;
+    border-radius: 4px;
+    width: 65%;
+    box-shadow: 0px 5px 40px 0px #1d1d1dde;
+}
+
+.multipleResultsTitle {
+    font-size: 28px;
+    color: red;
+    margin: 2rem;
+}
+
+.multipleResultsListSection {
+    display: grid; 
+    place-items: left;
+    font-size: 20px;
+}
+
+@media only screen 
+    and (min-device-width: 320px)
+    and (max-width: 1200px) {
+        .unvalidCharacterMessage {
+            font-size: 27px;
+            margin-top: 0;
+            margin-left: 2.5rem;
+            color: red;
+        }
+        .listContainer {
+            width: 85%;
+            margin: 3rem auto;
+            margin-top: 3rem;
+        }
+        .listSection {
+            font-size: 20px;
+        }
+        .mainContainer {
+            grid-gap: 0;
+            place-items: center;
+        }
+        .multipleResultsContainer {
+            margin: 0;
+            margin-left: 2.5rem;
+            width: 80%
+        }
+        .multipleResultsListSection {
+            font-size: 18px;
+        }
+        .multipleResultsTitle { 
+            font-size: 20px
+        }
+}
+
+/* tablet view */
+@media only screen 
+    and (min-device-width: 768px) 
+    and (max-device-width: 1224px) {
+        .listContainer {
+            width: 30rem;
+            margin: 9rem;
+        }
+        .multipleResultsContainer {
+            /* margin: 0; */
+            margin-left: 3.5rem;
+            /* width: 80% */
+        }
+}
 
