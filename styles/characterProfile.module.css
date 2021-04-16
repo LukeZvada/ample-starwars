@@ -43,20 +43,14 @@
     margin: 18px;
 }
 
-.noResultsListSection {
-    display: grid;
-    align-items: flex-end;
-    /* grid-column-end: none; */
-    margin-right: 40rem;
-    margin-top: -2rem;
-}
-
+/* search is not valid message */
 .unvalidCharacterMessage { 
     margin-top: 35rem;
     font-size: 40px; 
     color: red;
 }
 
+/* search yeilded multiple results message */
 .multipleResultsContainer {
     display: grid; 
     grid-template-columns: auto;
@@ -77,9 +71,7 @@
     display: grid; 
     place-items: left;
     font-size: 20px;
-    
 }
-
 
 @media only screen 
     and (min-device-width: 320px)

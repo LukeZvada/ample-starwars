@@ -60,7 +60,7 @@ export const CharacterProfile = ({  }) => {
                             searchResults.map(character => {
                                 return <div className={styles.multipleResultsListSection}>
                                             <ol>
-                                                <li className={styles.noResultsCharacterName}><strong>{character.name}</strong></li>
+                                                <li className={styles.multipleResultsCharacterName}><strong>{character.name}</strong></li>
                                             </ol>
                                         </div>
                                 }) 
