@@ -10,9 +10,12 @@ export const CharacterProvider = (props) => {
     const [searchQuery, setSearchQuery] = useState('')
 
     //async function to handle searched character query param. If results are returned it moves on to use the url's returned to fetch starships, films, and species. 
-    // If notthing is returned it sets the state to empty arrays to handle no search results. 
+    // If nothing is returned it sets the state to empty arrays to handle no search results. 
         const getCharacterData = async (searchCharacter) => {
+            //setting the state of the search query so I can use it in characterProfile to handle mulitple results and unvalid requests
             setSearchQuery(searchCharacter)
+
+            //fetch to aws api gateway. Working beautifully. However, for whatever reason if this does not work when you clone my code down use "https://swapi.py4e.com/api/people/?search=${searchCharacter}"
             const res = await fetch(`https://6a3qc7kzj1.execute-api.us-west-2.amazonaws.com/prod/people/?search=${searchCharacter}`)
             const searchResponse = await res.json()
             
