@@ -55,14 +55,16 @@ export const CharacterProfile = ({  }) => {
         return (
             <>
                 <div className={styles.multipleResultsContainer}>
-                <p className={styles.multipleResultsTitle}><strong>Your search resulted in multiple results. Please use the list below for reference and search again!</strong></p>
-                    {
-                        searchResults.map(character => {
-                            return <div className={styles.multipleResultsListSection}>
-                                        <h3 className={styles.noResultsCharacterName}> {character.name} </h3>
-                                    </div>
-                            }) 
-                    }
+                    <p className={styles.multipleResultsTitle}><strong>Your search yeilded multiple results. Please use the list below for reference and search again!</strong></p>
+                        {
+                            searchResults.map(character => {
+                                return <div className={styles.multipleResultsListSection}>
+                                            <ol>
+                                                <li className={styles.noResultsCharacterName}><strong>{character.name}</strong></li>
+                                            </ol>
+                                        </div>
+                                }) 
+                        }
                 </div>
             </>
         )
