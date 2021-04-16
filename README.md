@@ -1,42 +1,17 @@
-StarWars single page application with responsive design code test for Ample. 
+Single Page Star Wars character profile search application with responsive design and intergrated AWS API Gateway. This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-![desktopScreenshot](https://user-images.githubusercontent.com/67559287/114824760-2e1aa080-9d7a-11eb-8cab-22ca0cd2ee94.png)
+![desktopView](https://user-images.githubusercontent.com/67559287/115088181-78a83400-9ec4-11eb-9138-863813494abb.png)
+![tabletView](https://user-images.githubusercontent.com/67559287/115088190-7ba32480-9ec4-11eb-8bab-9d0b1812f017.png)
+![iPhoneView](https://user-images.githubusercontent.com/67559287/115088195-7e057e80-9ec4-11eb-9120-4514a98557a5.png)
 
-![mobileScreenshot1](https://user-images.githubusercontent.com/67559287/114918421-ea588300-9ddb-11eb-9dca-7024a5952fc8.png)
 
-
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
+### Setup
+1. Clone this Repository
+2. cd into ample-starwars
+3. Install dependencies:
 ```
+npm install
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# ample-starwars
+```
+4. Then run ``` npm run dev ``` to start Next.js server
+5. Open localhost:3000 in your browser and enjoy
