@@ -39,7 +39,8 @@ export const CharacterProfile = ({  }) => {
                                                 </li>
                                                 <li>
                                                     <label className={styles.formLabel}>Date of Birth:</label> 
-                                                    <span>{character.birth_year}</span></li>
+                                                    <span>{character.birth_year}</span>
+                                                </li>
                                                 <SpeciesList />
                                             </ol>
                                     </div>
@@ -72,7 +73,7 @@ export const CharacterProfile = ({  }) => {
     } else {
         return (
             <>
-                <p className={styles.unvalidCharacterMessage}>Please enter a valid character</p>
+                <p className={styles.unvalidCharacterMessage}>Please enter a valid character.</p>
             </>
         )
     }
