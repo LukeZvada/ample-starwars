@@ -79,7 +79,13 @@
             grid-gap: 0;
             place-items: center;
         }
-        .noResultsListSection {
+        .multipleResultsListSection {
+            display: grid;
+            place-items: center;
+            max-width: 100%;
+            margin: 0;
+        }
+        .multipleResultsTitle { 
             display: grid;
             place-items: center;
             max-width: 100%;
@@ -90,8 +96,9 @@
 /* tablet view */
 @media only screen 
     and (min-device-width: 768px) 
-    and (max-device-width: 1024px) {
+    and (max-device-width: 1224px) {
         .listContainer {
+            width: 30rem;
             margin: 9rem;
         }
 }
