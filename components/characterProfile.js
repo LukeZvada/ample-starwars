@@ -51,7 +51,7 @@ export const CharacterProfile = ({  }) => {
                 }
             </>
         )
-    //is the search conducted returns more than one result then show them a list of the character names returned and message use to use the list as reference and search again
+    //if the search conducted returns more than one result then show them a list of the character names returned and message use to use the list as reference and search again
     } else if (searchResults.length > 1) {
         return (
             <>
@@ -73,7 +73,7 @@ export const CharacterProfile = ({  }) => {
     } else {
         return (
             <>
-                <p className={styles.unvalidCharacterMessage}>Please enter a valid character.</p>
+                <p className={styles.invalidCharacterMessage}>Please enter a valid character.</p>
             </>
         )
     }

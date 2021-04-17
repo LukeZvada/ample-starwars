@@ -45,7 +45,7 @@
 }
 
 /* search is not valid message */
-.unvalidCharacterMessage { 
+.invalidCharacterMessage { 
     margin-top: 35rem;
     font-size: 40px; 
     color: red;
@@ -77,7 +77,7 @@
 @media only screen 
     and (min-device-width: 320px)
     and (max-width: 1200px) {
-        .unvalidCharacterMessage {
+        .invalidCharacterMessage {
             font-size: 27px;
             margin-top: 0;
             margin-left: 2.5rem;
@@ -120,6 +120,9 @@
             /* margin: 0; */
             margin-left: 3.5rem;
             /* width: 80% */
+        }
+        .invalidCharacterMessage {
+            font-size: 45px;
         }
 }
 
