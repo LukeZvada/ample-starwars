@@ -8,10 +8,6 @@ Single Page Application that allows a user to search for a Star Wars character p
 ### Setup
 1. Clone this Repository
 2. cd into ample-starwars
-3. Install dependencies:
-```
-npm install
-
-```
+3. Install dependencies: ```npm install```
 4. Then run ``` npm run dev ``` to start Next.js server
 5. Open localhost:3000 in your browser and enjoy
