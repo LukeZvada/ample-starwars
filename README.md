@@ -1,4 +1,4 @@
-Single Page Star Wars character profile search application with responsive design and intergrated AWS API Gateway. This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Single Page Application that allows a user to search for a Star Wars character profile. Fully equipped with responsive design and an intergrated AWS API Gateway. This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ![desktopView](https://user-images.githubusercontent.com/67559287/115088181-78a83400-9ec4-11eb-9138-863813494abb.png)
 ![tabletView](https://user-images.githubusercontent.com/67559287/115088190-7ba32480-9ec4-11eb-8bab-9d0b1812f017.png)
